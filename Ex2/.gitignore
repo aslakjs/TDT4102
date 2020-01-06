@@ -1,2 +1,3 @@
 # Untrack folders
 /build
+.DS_Store
