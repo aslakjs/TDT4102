@@ -1,5 +1,8 @@
 # Untrack folders
 /build
+
+# Untrack files
 /src/main
 /src/main.dSYM
+/src/.DS_Store
 .DS_Store
