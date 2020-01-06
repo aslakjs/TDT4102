@@ -12,6 +12,8 @@ Branch contents:
 - Dev (In Progress):
   - Assignment 2:
 	- Task 1/6 complete~
+  - Assignment 3:
+  - Assignment 4:
   
 <br><br>
 
