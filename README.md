@@ -11,7 +11,9 @@ Branch contents:
 
 - Dev (In Progress):
   - Assignment 2:
-	- Task 1/6 complete~
+	- Task 3/6 complete~
+	- Added .vscode to repo as example how to compile multiple files
+	  with clang++ compiler for VS Code.
   - Assignment 3:
   - Assignment 4:
   
