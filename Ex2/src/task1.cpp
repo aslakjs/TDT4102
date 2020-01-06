@@ -6,7 +6,14 @@ using namespace std;
 
 void inputAndPrintInteger(void) {
     int num;
-    cout << "\nEnter an integer: ";
+    cout << "Enter an integer: ";
     cin >> num;
-    cout << "\nYour integer was: " << num << endl;
+    cout << "Your integer was: " << num << endl;
+}
+
+int inputInteger(void) {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+    return num;
 }

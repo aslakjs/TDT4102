@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "../head/main.h"
-#include "../head/task1.h"
+
 using namespace std;
 
 int main(void) {
@@ -22,5 +22,10 @@ int main(void) {
 }
 
 void _task1(void) {
+    cout << "\nTask 1a)" << endl;
     inputAndPrintInteger();
+
+    cout << "\nTask 1b)" << endl;
+    int num = inputInteger();
+    cout << "Your integer was: " << num << endl;
 }
