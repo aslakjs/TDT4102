@@ -142,7 +142,7 @@ double fibonacci(int n) {
             }
             break;
     } 
-    cout << "\n\n----";
+    cout << "\n\n-----";
     return b;
 }
 
