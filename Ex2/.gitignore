@@ -3,4 +3,6 @@
 .DS_Store
 .vscode
 /src/main
+/src/task1
 /src/main.dSYM/
+/src/task1.dSYM/
