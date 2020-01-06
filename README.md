@@ -10,7 +10,8 @@ Branch contents:
   - Assignment 1 (Python to C++)
 
 - Dev (In Progress):
-  - Assignment 2 ~~
+  - Assignment 2:
+	- Task 1/6 complete~
   
 <br><br>
 
