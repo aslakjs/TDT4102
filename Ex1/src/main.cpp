@@ -113,14 +113,35 @@ double maxOfTwo(double a, double b) {
 double fibonacci(int n) {
     int a = 0;
     int b = 1;
-    double temp;
-    cout << "Fibonacci numbers:";
-    for (int x = 1; x < n+1; x++) {
-        cout << x << "\t" << b;
-        temp = b;
-        b += a;
-        a = temp;
-    }
+    int temp;
+    int fib;
+
+    cout << "\n---------------------------------------------" << endl;
+    cout << "[0] - exit | [1] - Original | [2] - Corrected" << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "Select your preffered Fibonacci-sequence: ";
+    cin >> fib;
+    cout << "Fibonacci numbers:" << endl;
+    switch (fib) {
+        case 0: break;
+        case 1: // Original fibbonaci-sequence:
+            for (int x = 1; x < (n+1); x++) {
+                cout << x << b << "\t";
+                temp = b;
+                b += a;
+                a = temp;
+            }
+            break;
+        case 2: // Corrected fibbonaci-sequence:
+            for (int x = 1; x < (n+1); x++) {
+                cout << a << "\t";
+                temp = b;
+                b += a;
+                a = temp;
+                
+            }
+            break;
+    } 
     cout << "\n\n----";
     return b;
 }

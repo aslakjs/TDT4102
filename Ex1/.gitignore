@@ -1,2 +1,4 @@
 # Untrack folders
 /build
+/src/main
+/src/main.dSYM
