@@ -1,5 +1,5 @@
 # Ignore:
-
+.vscode
 .DS_Store
 Ex1/.DS_Store
-Ex1/.vscode/settings.json
+Ex1/.vscode
