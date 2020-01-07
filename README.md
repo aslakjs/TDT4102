@@ -20,4 +20,5 @@ Branch contents:
 <br><br>
 
 All code © Aslak Strand
+
 Code should be used only as a guideline for solving the assignments.
