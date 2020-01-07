@@ -1,10 +1,36 @@
+/*----------------------------------------------------
+TITLE:  Assignment 2
+COURSE: TDT4102 - Programming
+AUTHOR: Aslak J. Strand
+
+REQUIRED FILES:
+- /Library/tdt4102/..
+
+- .vscode/:
+    - c_cpp_properties.json
+    - extensions.json
+    - launch.json
+    - tasks.json
+
+- /src/:            - /head/:
+    - main.cpp          - main.h
+    - task1.cpp         - task1.h
+    - task2.cpp         - task2.h
+    - task3.cpp         - task3.h
+    - task4.cpp         - task4.h
+    - task5.cpp         - task5.h
+---------------------------------------------------*/
+
+
 #include <iostream>
 #include <stdio.h>
-#include "../head/main.h"
+//#include "../head/main.h"
+#include "main.h"
 
 using namespace std;
 
 int main(void) {
+
     int mm;
     while (true) {
         cout << "\n---------------------------" << endl;
@@ -130,3 +156,4 @@ void _task4(void) {
 void _task5(void) {
     pythagoras();
 }
+

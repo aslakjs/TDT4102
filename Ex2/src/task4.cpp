@@ -1,6 +1,7 @@
 #include <iostream> // cout/cin etc,
 #include <cmath>
-#include "../head/task4.h"
+//#include "../head/task4.h"
+#include "task4.h"
 using namespace std;
 
 // Task 4a)

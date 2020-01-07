@@ -1,6 +1,7 @@
 #include <iostream> // cout/cin etc,
 #include <iomanip>  // setw
-#include "../head/task3.h"
+//#include "../head/task3.h"
+#include "task3.h"
 using namespace std;
 
 // Task 3a) menu-setup -> see _task2 @ main.cpp

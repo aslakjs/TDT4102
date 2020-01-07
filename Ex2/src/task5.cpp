@@ -1,5 +1,6 @@
 #include <iostream>
-#include "../head/task5.h"
+//#include "../head/task5.h"
+#include "task5.h"
 #include "Graph.h"
 #include "Simple_window.h"
 

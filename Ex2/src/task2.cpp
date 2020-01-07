@@ -1,6 +1,7 @@
 #include <iostream> // cout/cin etc,
 #include <iomanip> // SetPrecition
-#include "../head/task2.h"
+//#include "../head/task2.h"
+#include "task2.h"
 using namespace std;
 
 // Task 2a)
