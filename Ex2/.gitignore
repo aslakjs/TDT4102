@@ -1,6 +1,7 @@
 # Untrack folders
 /build
-/Debug/
+/Debug
+/Release
 .DS_Store
 
 /src/main
