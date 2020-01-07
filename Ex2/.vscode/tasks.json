@@ -11,6 +11,7 @@
                 "/Users/straslak/Desktop/Skole/Master NTNU/02_Semester/TDT4102 C++/TDT4102/Ex2/src/task1.cpp",
                 "/Users/straslak/Desktop/Skole/Master NTNU/02_Semester/TDT4102 C++/TDT4102/Ex2/src/task2.cpp",
                 "/Users/straslak/Desktop/Skole/Master NTNU/02_Semester/TDT4102 C++/TDT4102/Ex2/src/task3.cpp",
+                "/Users/straslak/Desktop/Skole/Master NTNU/02_Semester/TDT4102 C++/TDT4102/Ex2/src/task4.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
                 

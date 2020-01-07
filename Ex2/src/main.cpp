@@ -10,7 +10,7 @@ int main(void) {
         cout << "\n---------------------------" << endl;
         cout << "[0] - Exit   | [1] - Task 1" << endl;
         cout << "[2] - Task 2 | [3] - Task 3" << endl;
-        cout << "[4] - TBD | [5] - TBD" << endl;
+        cout << "[4] - Task 4 | [5] - TBD" << endl;
         cout << "[6] - TBD |" << endl;
         cout << "---------------------------" << endl;
         cout << "Select task: ";
@@ -21,6 +21,7 @@ int main(void) {
             case 1: _task1(); break;
             case 2: _task2(); break;
             case 3: multiTable(); break;
+            case 4: _task4(); break;
         }
     }
 }
@@ -104,4 +105,23 @@ void _task2(void) { // Task 3a = create menu-system for Task 2
                 break;
         }
     }
+}
+
+void _task4(void) {
+    cout << "\nTask 4a)" << endl;
+    cout << "The discriminant is: " << discriminant();
+
+    cout << "\n\nTask 4b)" << endl;
+    printRealRoots();
+
+    cout << "\nTask 4c)" << endl;
+    solveQuadraticEquation();
+
+    cout << "\nTask 4d)" << endl;
+    cout << "Task 4 can be found in main manu, will however go through all of task 4." << endl;
+
+    cout << "\nTask 4e)" << endl;
+    cout << " x^2 + 2x + 4 = 0 yields no real roots" << endl;
+    cout << "4x^2 + 4x + 1 = 0 yields one real root x = -0.5" << endl;
+    cout << "8x^2 + 4x - 1 = 0 yields two real roots: x1 = 0.183 and x2 = -0.683" << endl;
 }
