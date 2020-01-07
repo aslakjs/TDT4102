@@ -10,10 +10,15 @@ Branch contents:
   - Assignment 1 (Python to C++)
 
 - Dev (In Progress):
-  - Assignment 2 ~~
-	- Task 1/6 complete.
+  - Assignment 2:
+	- Task 4/6 complete~
+	- Added .vscode to repo as example how to compile multiple files
+	  with clang++ compiler for VS Code.
+  - Assignment 3:
+  - Assignment 4:
   
 <br><br>
 
 All code © Aslak Strand
-Code should be used only as a guideline for solving the assignments.
+
+Code should be deemed only as a potential guideline, not an exact solution.
