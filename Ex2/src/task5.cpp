@@ -1,11 +1,15 @@
-#include <iostream> // cout/cin etc,
-#include <cmath>
+#include <iostream>
+#include "../head/task5.h"
 #include "Graph.h"
 #include "Simple_window.h"
-#include "../head/task5.h"
-using namespace std;
 
-// Task 5a)
+using namespace Graph_lib;
+
+
 void pythagoras(void) {
+    int w = 100;
+    int h = 100;
+    Simple_window win{Point{100,100},w,h,"Pythagoras"};
 
+    win.wait_for_button();
 }
