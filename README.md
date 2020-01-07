@@ -21,4 +21,4 @@ Branch contents:
 
 All code © Aslak Strand
 
-Code should be deemed only as a guideline if needed.
+Code should be deemed only as a potential guideline, not an exact solution.
