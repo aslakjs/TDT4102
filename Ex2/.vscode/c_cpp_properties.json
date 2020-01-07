@@ -1,0 +1,24 @@
+{
+    "env": {
+        "tdt4102IncludePath": [
+            "/Library/tdt4102/Graph_lib/include",
+            "/Library/tdt4102/FLTK/include"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}**",
+                "${workspaceFolder}**",
+                "${tdt4102IncludePath}"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
