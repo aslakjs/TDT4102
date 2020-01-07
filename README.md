@@ -21,4 +21,4 @@ Branch contents:
 
 All code © Aslak Strand
 
-Code should be used only as a guideline for solving the assignments.
+Code should be deemed only as a guideline if needed.
