@@ -12,5 +12,5 @@ void pythagoras(void) {
     int h = 100;
     Simple_window win{Point{100,100},w,h,"Pythagoras"};
 
-    win.wait_for_button();
+    //win.wait_for_button();
 }

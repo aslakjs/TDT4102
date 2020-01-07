@@ -86,7 +86,7 @@ void _task1(void) {
 }
 
 void _task2(void) { // Task 3a = create menu-system for Task 2
-    int m2;
+    int m2 = 1;
     double num;
     while (m2 != 0) {
         cout << "\n---------------------------------------" << endl;

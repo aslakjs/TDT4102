@@ -6,7 +6,7 @@
 // src/     .cpp-files
 //
 // Change to 1 if includes in folders, else 0
-#define FOLDER 1  
+#define FOLDER 0 
 
 #if FOLDER
 #include "../head/task1.h"

@@ -4,4 +4,4 @@
 // Declaration
 void pythagoras(void);
 
-#endif TASK5_H
+#endif /* !TASK5_H */
