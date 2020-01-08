@@ -28,28 +28,36 @@ void pythagoras(void) {
     rightTriangle.set_fill_color(Color::black);
 
     // Bottom square setup:
-    squareOne.add(Point{lx,ly});
-    squareOne.add(Point{rx,ry});
-    squareOne.add(Point{lx,ly+(rx-lx)});
-    squareOne.add(Point{rx,ry+(rx-lx)});
+    squareOne.add(Point{lx,ly});            // TL
+    squareOne.add(Point{rx,ry});            // TR    
+    squareOne.add(Point{lx,ly+(rx-lx)});    // BL
+    squareOne.add(Point{rx,ry+(rx-lx)});    // BR
     rightTriangle.set_fill_color(Color::red);
-    /*
+    
     // left square setup:
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
+    squareOne.add(Point{tx,ty});            // TR
+    squareOne.add(Point{tx-(tx-lx),ty});    // TL
+    squareOne.add(Point{lx,ly});            // BR
+    squareOne.add(Point{lx-(tx-lx),ly});    // BL
     rightTriangle.set_fill_color(Color::green);
-
+    
     // Right square setup:
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
-    squareOne.add(Point{x,y});
-    rightTriangle.set_fill_color(Color::green);
-    */
+
+    squareOne.add(Point{tx,ty});  // TL
+    squareOne.add(Point{x,y});  // TR
+    squareOne.add(Point{rx,ry});  // BL
+    squareOne.add(Point{x,y});  // BR
+    rightTriangle.set_fill_color(Color::dark_blue);
+    
     Simple_window win{Point{100,100},w,h,"Task 5b) Pythagoras"};
     win.attach(rightTriangle);
     //win.attach(squareOne);
     win.wait_for_button();
+}
+
+double getHyp() {
+    
+}
+double getKat() {
+
 }

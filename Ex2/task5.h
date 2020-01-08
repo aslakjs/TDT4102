@@ -3,5 +3,6 @@
 
 // Declaration
 void pythagoras(void);
+double getHyp();
 
 #endif /* !TASK5_H */
