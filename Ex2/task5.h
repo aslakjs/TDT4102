@@ -3,6 +3,7 @@
 
 // Declaration
 void pythagoras(void);
-double getHyp();
+int getHyp(double x, double y);
+int getKat(double hyp, double kat1);
 
 #endif /* !TASK5_H */
