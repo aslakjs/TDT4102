@@ -24,6 +24,7 @@ REQUIRED FILES:
 
 #include <iostream>
 #include <stdio.h>
+#include "time.h"
 //#include "../head/main.h"
 #include "main.h"
 
@@ -37,7 +38,7 @@ int main(void) {
         cout << "[0] - Exit   | [1] - Task 1" << endl;
         cout << "[2] - Task 2 | [3] - Task 3" << endl;
         cout << "[4] - Task 4 | [5] - Task 5" << endl;
-        cout << "[6] - TBD |" << endl;
+        cout << "[6] - Task 6 | [7] - Info  " << endl;
         cout << "---------------------------" << endl;
         cout << "Select task: ";
         cin >> mm;
@@ -49,6 +50,14 @@ int main(void) {
             case 3: multiTable(); break;
             case 4: _task4(); break;
             case 5: _task5(); break;
+            case 7:
+                cout << "\n\n-----------------------------" << endl;
+                cout << "TITLE:  Assignment 2" << endl;
+                cout << "COURSE: TDT4102 - Programming" << endl;
+                cout << "AUTHOR: Aslak J. Strand" << endl;
+                cout << "  (c)   Aslak J. Strand" << endl;
+                cout << "-----------------------------\n" << endl;
+                break;
         }
     }
 }
