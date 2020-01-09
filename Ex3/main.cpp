@@ -56,5 +56,6 @@ void info(void) {
 }
 
 void testDeviation(double compareOperand, double toOperand, double maxError, string name) {
-
+    cout << endl << " ~~Initiating test~~" << endl;
+    cout << "Running test: " << name << endl << endl;
 }
