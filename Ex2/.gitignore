@@ -1,9 +1,0 @@
-# Untrack folders
-/build/
-.vscode/
-.DS_Store
-
-/src/main
-/src/task1
-/src/main.dSYM/
-/src/task1.dSYM/

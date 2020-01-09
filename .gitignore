@@ -1,5 +1,13 @@
-# Ignore:
-
+# Ignore root stuff:
+.vscode
 .DS_Store
+
+# Ex1:
 Ex1/.DS_Store
-Ex1/.vscode/settings.json
+Ex1/.vscode
+
+
+# Ex2:
+Ex2/Debug
+Ex2/Release
+Ex2/.DS_Store
