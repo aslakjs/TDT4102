@@ -32,10 +32,16 @@ REQUIRED FILES:
 using namespace std;
 
 int main(void) {
-
+#if DEBUG
+    // Toggle DEBUG in main.h: <0,1> / <true/false>
+    // Enter the function to test below:
+    printLoan();
+#else
     char mm;
     while (true) {
         cout << "\n---------------------------" << endl;
+        cout << "~~~~~~~~ Main-Menu ~~~~~~~~" << endl;
+        cout << "---------------------------" << endl;
         cout << "[0] - Exit   | [i] - Info  " << endl;
         cout << "[1] - Task 1 | [2] - Task 2" << endl;
         cout << "[3] - Task 3 | [4] - Task 4" << endl;
@@ -53,15 +59,16 @@ int main(void) {
             case '5': pythagoras(); break;
             case '6': _task6(); break;
             case 'i':
-                cout << "\n\n-----------------------------" << endl;
+                cout << "\n\n---------------------------" << endl;
                 cout << "TITLE:  Assignment 2" << endl;
-                cout << "COURSE: TDT4102 - Programming" << endl;
+                cout << "COURSE: TDT4102-Programming" << endl;
                 cout << "AUTHOR: Aslak J. Strand" << endl;
-                cout << "  (c)   Aslak J. Strand" << endl;
-                cout << "-----------------------------\n" << endl;
+                cout << "  (c)   Aslak J. Strand";
                 break;
         }
     }
+#endif
+    return 0;
 }
 
 void _task1(void) {
@@ -101,6 +108,8 @@ void _task2(void) { // Task 3a = create menu-system for Task 2
     double num;
     while (m2 != 0) {
         cout << "\n---------------------------------------" << endl;
+        cout << "~~~~~~~~~ Task 2,3 & 4: Loops ~~~~~~~~~" << endl;
+        cout << "---------------------------------------" << endl;
         cout << "[0] - Exit        | [1] - intSum"        << endl;
         cout << "[2] - infSum      | [3] - for vs. while" << endl;
         cout << "[4] - inputDouble | [5] - nok2eur"       << endl;
@@ -168,24 +177,80 @@ void _task6(void) {
     int loan = 0;
     int rate = 0;
     int year = 0;
-    vector<int> pay;
+    int m6 = 0;
+    vector<int> pay1;
+    vector<int> pay2;
 
-    // Task 6a)
-    cout << "\nTask 6a)" << endl;
-    cout << "Enter your values:" << endl;
-    cout << "Loan:  ";
-    cin >> loan;
-    if (loan == 0) {pay = calculateSeries();} // Input 0 to run basic setup with given values
-    else {
-        cout << "Rate:  ";
-        cin >> rate;
-        cout << "Years: ";
-        cin >> year;
-        pay = calculateSeries(loan, rate, year);
-    }
-    cout << "Year:\tPayment" << endl;
-    for (int i = 0; i <= pay.size(); i++) {
-        cout << i << "\t" << pay[i] << endl;
+    while (true) {
+        cout << "\n---------------------------------------" << endl;
+        cout << "~~~~~~~~~~ Task 6: Loan-menu ~~~~~~~~~~" << endl;
+        cout << "~~~~~ Input loan=0 to run example ~~~~~" << endl;
+        cout << "---------------------------------------" << endl;
+        cout << "[0] - Exit        | [1] - Task 6c      " << endl;
+        cout << "[2] - Task 6a     | [3] - Task 6b      " << endl;
+        cout << "---------------------------------------" << endl;
+        cout << "Take your pick (0-3): ";
+        cin >> m6;
+
+        switch (m6) {
+            case 0: return;
+            case 1:
+                cout << "\nTask 6a)" << endl;
+                cout << "Enter your values:" << endl;
+                cout << "Loan:  ";
+                cin >> loan;
+                if (loan == 0) {printLoan();} // Input 0 to run basic setup with given values
+                else {
+                    cout << "Rate:  ";
+                    cin >> rate;
+                    cout << "Years: ";
+                    cin >> year;
+                    printLoan(loan, rate, year);
+                }
+                
+                break;
+            case 2:
+                // Task 6a)
+                cout << "\nTask 6a)" << endl;
+                cout << "Enter your values:" << endl;
+                cout << "Loan:  ";
+                cin >> loan;
+                if (loan == 0) {pay1 = calculateSeries();} // Input 0 to run basic setup with given values
+                else {
+                    cout << "Rate:  ";
+                    cin >> rate;
+                    cout << "Years: ";
+                    cin >> year;
+                    pay1 = calculateSeries(loan, rate, year);
+                }
+                cout << "Year:\tPayment" << endl;
+                for (int i = 0; i < pay1.size(); i++) {
+                    cout << i+1 << "\t" << pay1[i] << endl;
+                }
+                break;
+            case 3:
+                // Task 6b)
+                cout << "\nTask 6b)" << endl;
+                cout << "Enter your values:" << endl;
+                cout << "Loan:  ";
+                cin >> loan;
+                if (loan == 0) {pay2 = calcAnnuity();} // Input 0 to run basic setup with given values
+                else {
+                    cout << "Rate:  ";
+                    cin >> rate;
+                    cout << "Years: ";
+                    cin >> year;
+                    pay2 = calcAnnuity(loan, rate, year);
+                }
+                cout << "\nYear:\tPayment" << endl;
+                for (int i = 0; i < pay2.size(); i++) {
+                    cout << i+1 << "\t" << pay2[i] << endl;
+                }
+                break;
+            default:
+                cout << "\nWrong input." << endl;
+                cout << "Please try again.";
+        }
     }
 }
 
