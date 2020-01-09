@@ -9,8 +9,6 @@ Branch contents:
 - Master (Done):
   - Assignment 1 (Python to C++)
   - Assignment 2 (Loops/Vectors)
-    - Minor discrepancy in Task 6, assuming given solution to be flaud.
-    - Added .vscode
 
 - Dev (In Progress):
   - Assignment 3:
