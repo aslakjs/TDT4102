@@ -11,3 +11,9 @@ Ex1/.vscode
 Ex2/Debug
 Ex2/Release
 Ex2/.DS_Store
+
+# Ex3:
+Ex3/Makefile
+
+# Ex4
+Ex4/Makefile
