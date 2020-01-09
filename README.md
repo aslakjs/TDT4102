@@ -19,6 +19,7 @@ Branch contents:
   - Assignment 2 (Loops/Vectors)
     - Minor discrepancy in Task 6, assuming given solution to be flaud.
     - Added .vscode
+
 - Dev (In Progress):
 >>>>>>> dev
   - Assignment 3:
