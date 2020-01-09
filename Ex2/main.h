@@ -14,6 +14,7 @@
 #include "../head/task3.h"
 #include "../head/task4.h"
 #include "../head/task5.h"
+#include "../head/task6.h"
 #endif /* !FOLDER == true */
 
 // Use includes below if all files in one folder
@@ -23,12 +24,13 @@
 #include "task3.h"
 #include "task4.h"
 #include "task5.h"
+#include "task6.h"
 #endif /* !FOLDER == false */
 
 // Declarations
 void _task1(void);
 void _task2(void);
 void _task4(void);
-void _task5(void);
+void _task6(void);
 
 #endif /* !MAIN_H */

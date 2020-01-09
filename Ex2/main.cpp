@@ -25,6 +25,7 @@ REQUIRED FILES:
 #include <iostream>
 #include <stdio.h>
 #include "time.h"
+#include <vector>
 //#include "../head/main.h"
 #include "main.h"
 
@@ -32,25 +33,26 @@ using namespace std;
 
 int main(void) {
 
-    int mm;
+    char mm;
     while (true) {
         cout << "\n---------------------------" << endl;
-        cout << "[0] - Exit   | [1] - Task 1" << endl;
-        cout << "[2] - Task 2 | [3] - Task 3" << endl;
-        cout << "[4] - Task 4 | [5] - Task 5" << endl;
-        cout << "[6] - Task 6 | [7] - Info  " << endl;
+        cout << "[0] - Exit   | [i] - Info  " << endl;
+        cout << "[1] - Task 1 | [2] - Task 2" << endl;
+        cout << "[3] - Task 3 | [4] - Task 4" << endl;
+        cout << "[5] - Task 5 | [6] - Task 6" << endl;
         cout << "---------------------------" << endl;
         cout << "Select task: ";
         cin >> mm;
 
         switch (mm) {
-            case 0: return 0;
-            case 1: _task1(); break;
-            case 2: _task2(); break;
-            case 3: multiTable(); break;
-            case 4: _task4(); break;
-            case 5: _task5(); break;
-            case 7:
+            case '0': return 0;
+            case '1': _task1(); break;
+            case '2': _task2(); break;
+            case '3': multiTable(); break;
+            case '4': _task4(); break;
+            case '5': pythagoras(); break;
+            case '6': _task6(); break;
+            case 'i':
                 cout << "\n\n-----------------------------" << endl;
                 cout << "TITLE:  Assignment 2" << endl;
                 cout << "COURSE: TDT4102 - Programming" << endl;
@@ -162,7 +164,28 @@ void _task4(void) {
     cout << "8x^2 + 4x - 1 = 0 yields two real roots: x1 = 0.183 and x2 = -0.683" << endl;
 }
 
-void _task5(void) {
-    pythagoras();
+void _task6(void) {
+    int loan = 0;
+    int rate = 0;
+    int year = 0;
+    vector<int> pay;
+
+    // Task 6a)
+    cout << "\nTask 6a)" << endl;
+    cout << "Enter your values:" << endl;
+    cout << "Loan:  ";
+    cin >> loan;
+    if (loan == 0) {pay = calculateSeries();} // Input 0 to run basic setup with given values
+    else {
+        cout << "Rate:  ";
+        cin >> rate;
+        cout << "Years: ";
+        cin >> year;
+        pay = calculateSeries(loan, rate, year);
+    }
+    cout << "Year:\tPayment" << endl;
+    for (int i = 0; i <= pay.size(); i++) {
+        cout << i << "\t" << pay[i] << endl;
+    }
 }
 

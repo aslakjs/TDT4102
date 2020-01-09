@@ -17,7 +17,7 @@ void pythagoras(void) {
     int ly = 650;   // TBL y-value
     int rx = 550;   // TBR x-value
     int ry = 650;   // TBR y-value
-    Simple_window win{Point{100,100},w,h,"Task 5b) Pythagoras"};
+    Simple_window win{Point{100,100},w,h,"Task 5: Pythagoras"};
     Polygon rightTriangle;
     Polygon squareOne;      // Bottom
     Polygon squareTwo;      // Left
@@ -47,11 +47,11 @@ void pythagoras(void) {
     win.attach(squareTwo);
     
     // Right square setup:
-    int triHyp = getHyp((ly-ty),(rx-lx));       // Hypotenus for triangle
-    int thrHyp = getHyp(triHyp, triHyp);        // Diagonal for square three
+    int triHyp = getHyp((ly-ty),(rx-lx));   // Hypotenus for triangle
+    int thrHyp = getHyp(triHyp, triHyp);    // Diagonal for square three
     int TRx = round(thrHyp/2);
-    squareThr.add(Point{tx+1,ty});              // TL
-    squareThr.add(Point{rx+1,ry});              // BL
+    squareThr.add(Point{tx+1,ty});                  // TL
+    squareThr.add(Point{rx+1,ry});                  // BL
     squareThr.add(Point{(rx+TRx),(ly-(TRx/2))});    // BR
     squareThr.add(Point{(tx+TRx),(ty-(TRx/2))});    // TR
     squareThr.set_fill_color(Color::blue);
