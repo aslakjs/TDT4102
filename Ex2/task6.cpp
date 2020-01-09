@@ -6,20 +6,24 @@
 #include "task6.h"
 using namespace std;
 
-// Task 6a) Calc off else working
+// Task 6a) 
 vector<int> calculateSeries (int loan, int rate, int years) {
+    double dLoan = static_cast<double>(loan);
+    double dRate = static_cast<double>(rate);
     vector<int> res;
     double pay = 0;
-    double remains = static_cast<double>(loan);
+    double remains = dLoan;
     
     cout << endl << "Your loan: " << loan << endl;
     cout << "Your rate: " << rate << endl;
     cout << "#of years: " << years << endl << endl;
 
     for (int i = 1; i <= years; i++) {
-        remains = loan - pay;
-        pay = ( (static_cast<double>(loan)/years) + ((rate/100.0)*static_cast<double>(remains)) ); // 100.0 yields float-calc
+        pay = ( ( dLoan / years ) + ( dRate*remains / 100 ) );
+        remains -= pay;
+        cout << "rem: " << remains << endl << "pay: " << pay << endl;
         res.push_back(static_cast<int>(pay));
+        //res.push_back(pay);
     }
 
     return (res);
