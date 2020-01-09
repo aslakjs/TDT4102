@@ -7,7 +7,7 @@
 //
 // Change to 1 if includes in folders, else 0
 #define FOLDER 0 
-#define DEBUG 1
+#define DEBUG 0
 
 #if FOLDER
 #include "../head/task1.h"

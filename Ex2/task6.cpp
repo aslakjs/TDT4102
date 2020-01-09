@@ -10,7 +10,7 @@ using namespace std;
 vector<int> calculateSeries (int loan, int rate, int years) {
     double dLoan = static_cast<double>(loan);
     double dRate = static_cast<double>(rate);
-    vector<int> res;
+    vector<int> res;    // Resultant vector
     double pay = 0;
     double remains = dLoan;
     
@@ -19,17 +19,15 @@ vector<int> calculateSeries (int loan, int rate, int years) {
     cout << "#of years: " << years << endl << endl;
 
     for (int i = 1; i <= years; i++) {
-        pay = ( ( dLoan / years ) + ( dRate*remains / 100 ) );
-        remains -= pay;
-        cout << "rem: " << remains << endl << "pay: " << pay << endl;
+        pay = ( ( dLoan / years ) + ( dRate*remains / 100.0 ) );
+        remains -= dLoan/years;
         res.push_back(static_cast<int>(pay));
-        //res.push_back(pay);
     }
 
     return (res);
 }
 
-// Task 6b) Calc off else working
+// Task 6b) 
 vector<int> calcAnnuity(int loan, int rate, int years) {
     double pay = 0;
     pay = (loan * ( (rate/100.0) / (1- pow(1+(rate/100.0),-years) ) ));

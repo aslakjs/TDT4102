@@ -1,10 +1,11 @@
 /*----------------------------------------------------
 TITLE:  Assignment 2
 COURSE: TDT4102 - Programming
-AUTHOR: Aslak J. Strand
+AUTHOR: Aslak J. Strand (c)
 
 REQUIRED FILES:
 - /Library/tdt4102/..
+- Makefile
 
 - .vscode/:
     - c_cpp_properties.json
@@ -19,6 +20,7 @@ REQUIRED FILES:
     - task3.cpp         - task3.h
     - task4.cpp         - task4.h
     - task5.cpp         - task5.h
+    - task6.cpp         - task6.h
 ---------------------------------------------------*/
 
 
@@ -51,7 +53,7 @@ int main(void) {
         cin >> mm;
 
         switch (mm) {
-            case '0': return 0;
+            case '0': cout << endl << endl; return 0;
             case '1': _task1(); break;
             case '2': _task2(); break;
             case '3': multiTable(); break;
