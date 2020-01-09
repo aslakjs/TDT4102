@@ -5,7 +5,8 @@
 # Ex1:
 Ex1/.DS_Store
 Ex1/.vscode
-
+Ex1/src/main
+Ex1/src/main.dSYM
 
 # Ex2:
 Ex2/Debug
