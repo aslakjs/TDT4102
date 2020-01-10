@@ -5,8 +5,9 @@
 #include "cannonball.h"
 
 // main.cpp function declarations:
-void testDeviation(double compareOperand, double toOperand, double maxError, string name);
-
+void testDeviation(double maxError = 0.0001);
+inline void waitForEnter();
+void testPrint(std::string nameOfFunction = "~Test of test-function~", double maxError = 0, double testOfFunction = 0, double givenError = 0, double toOperand = 0);
 
 // Test-function at top of main-function
 // Keep = <false> unless spesific test reqired

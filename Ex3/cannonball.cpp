@@ -17,7 +17,7 @@ double velY(double initVelocityY, double time) {
 
 // Task 2c)
 double posX(double initPosition, double initVelocity, double time) {
-    return ( initPosition + (initVelocity * time) + (( pow(time,2) * acclY() ) / 2) );
+    return ( initPosition + (initVelocity * time) + (( pow(time,2) * 0 ) / 2) );
 }
 double posY(double initPosition, double initVelocity, double time){
     return ( initPosition + (initVelocity * time) + (( pow(time,2) * acclY() ) / 2) );
