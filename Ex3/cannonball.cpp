@@ -2,6 +2,7 @@
 #include <iostream> // cout
 #include <iomanip>  // Setprecition
 #include <cmath>    // pow
+#include <vector>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ double velY(double initVelocityY, double time) {
     return ( initVelocityY + (time * acclY()) );
 }
 
-// Task 2c)
+// Task 2c) posY yields wrong position
 double posX(double initPosition, double initVelocity, double time) {
     return ( initPosition + (initVelocity * time) + (( pow(time,2) * 0 ) / 2) );
 }
@@ -50,4 +51,35 @@ void printTime(double time) {
 // Task 2e)
 double flightTime(double initVelocity) {
     return ( (-2*initVelocity) / (acclY()) );
+}
+
+// Task 4a)
+double getUserInputTheta() {
+    double theta = 0;
+    cout << endl << "Input Theta: ";
+    cin >> theta;
+    cout << endl;
+    return theta;
+}
+double getUserInputAbsVelocity() {
+    double absVel = 0;
+    cout << endl << "Input absolute velocity: ";
+    cin >> absVel;
+    cout << endl;
+    return absVel;
+}
+double degToRad(double deg) {
+    return (deg * (PI/180.0));
+}
+double getVelocityX(double theta, double absVelocity) {
+    return (absVelocity*cos(theta));
+}
+double getVelocityY(double theta, double absVelocity) {
+    return (absVelocity * sin(theta));
+}
+vector<double> getVelocityVector(double theta, double absVelocity) {
+    vector<double> result(0,2);
+    result[0] = getVelocityX(theta, absVelocity);
+    result[1] = getVelocityY(theta, absVelocity);
+    return result;
 }
