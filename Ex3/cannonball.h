@@ -27,4 +27,11 @@ double degToRad(double deg = 0);
 double getVelocityX(double theta = 0, double absVelocity = 0);
 double getVelocityY(double theta = 0, double absVelocity = 0);
 std::vector<double> getVelocityVector(double theta = 0, double absVelocity = 0);
+
+// Task 4b)
+double getDistanceTraveled(double velocityX = 0, double velocityY = 0);
+
+// Task 4c)
+double targetPractise(double distanceToTarget = 0, double velocityX = 0, double velocityY = 0);
+
 #endif /* !CANNONBALL_H */

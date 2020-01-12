@@ -40,26 +40,47 @@ int main(void) {
         cout << "\n---------------------------" << endl;
         cout << "~~~~~~~~ Main-Menu ~~~~~~~~" << endl;
         cout << "---------------------------" << endl;
-        cout << "[0] - Exit   | [i] - Info  " << endl;
-        cout << "[1] - TBD    | [2] - TBD" << endl;
+        cout << "[0] - Exit    | [i] - Info  " << endl;
+        cout << "[1] - Task 4d | [2] - TBD" << endl;
         cout << "---------------------------" << endl;
         cout << "Select task: ";
         cin >> mm;
     
-    switch (mm) {
-    case 'i': info(); break;
-    case '0': cout << endl << endl; return 0;
-    default: cout << "Unvalid input, try again!" << endl; break;
+        switch (mm) {
+        case 'i': info(); break;
+        case '0': cout << endl << endl; return 0;
+        case '1': _task4d(); break;
+        default: cout << "Unvalid input, try again!" << endl; break;
+        }
     }
-
-    
 #endif
     return 0;
 }
 
+void _task4d(void) {
+    double distTarg;
+    cout << "\n\nLength to target [m]: ";
+    cin >> distTarg;
+    double vel = getUserInputAbsVelocity();
+    double deg = getUserInputTheta();
+    double rad = degToRad(deg);
+    cout << "\nDegrees = " << rad << " radians." << endl;
+    vector<double> velXY = getVelocityVector(rad, vel);
+    cout << "Velocities: x=" << velXY[0] << " and y=" << velXY[1] << endl;
+    double goal = targetPractise(distTarg, velXY[0], velXY[1]);
+    cout << endl;
+    if (goal == 0) {cout << "FFS, that's spot on. WOW!" << endl;}
+    else if (abs(goal) <= 10) {cout << "Close enough!" << endl;}
+    else if (abs(goal) <= 50) {cout << "You can do better than that!" << endl;}
+    else {cout << "Waaaay off target." << endl << endl;} 
+
+    waitForEnter();
+}
+
 void info(void) {
-    cout << "\n\n---------------------------" << endl;
-    cout << "TITLE:  Assignment 2" << endl;
+    for (int i = 0; i<50; i++) {cout << endl;}
+    cout << "---------------------------" << endl;
+    cout << "TITLE:  Assignment 3" << endl;
     cout << "COURSE: TDT4102-Programming" << endl;
     cout << "AUTHOR: Aslak J. Strand" << endl;
     cout << "  (c)   Aslak J. Strand";
@@ -145,6 +166,7 @@ void testPrint(string nameOfFunction, double maxError, double testOfFunction, do
 
 // Wait for enter-key
 inline void waitForEnter() {
+    fseek(stdin,0,SEEK_END); // Clear input buffer
     do {cout << "Press Enter To Continue..";
     } while (cin.get()!='\n');
     for (int i = 0; i < 100; i++) {cout << endl;}

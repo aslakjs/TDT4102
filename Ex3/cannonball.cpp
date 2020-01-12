@@ -58,16 +58,14 @@ double flightTime(double initVelocity) {
 // Task 4a)
 double getUserInputTheta() {
     double theta = 0;
-    cout << endl << "Input Theta: ";
+    cout << "Input Theta [deg]: ";
     cin >> theta;
-    cout << endl;
     return theta;
 }
 double getUserInputAbsVelocity() {
     double absVel = 0;
-    cout << endl << "Input absolute velocity: ";
+    cout << "Input absolute velocity [m/s]: ";
     cin >> absVel;
-    cout << endl;
     return absVel;
 }
 double degToRad(double deg) {
@@ -80,8 +78,29 @@ double getVelocityY(double theta, double absVelocity) {
     return (absVelocity * sin(theta));
 }
 vector<double> getVelocityVector(double theta, double absVelocity) {
-    vector<double> result(0,2);
+    vector<double> result(2,0);
+    cout << "Velocity vector created." << endl;
     result[0] = getVelocityX(theta, absVelocity);
+    cout << "Velocity x-component computed." << endl;
     result[1] = getVelocityY(theta, absVelocity);
+    cout << "Velocity y-component computed." << endl;
     return result;
 }
+
+// Task 4b)
+double getDistanceTraveled(double velocityX, double velocityY) {
+    double time = flightTime(velocityY);
+    return (posX(0,velocityX, time));
+}
+
+// Task 4c)
+double targetPractise(double distanceToTarget, double velocityX, double velocityY) {
+    double distX = getDistanceTraveled(velocityX, velocityY);
+    double hit = distanceToTarget - distX;
+    cout << "\n\nDistance to target [m]: " << distanceToTarget << endl;
+    cout << "Distance traveled [m]:      " << distX << endl;
+    cout << "Missed by [m]:              " << hit << endl;
+    return hit;
+}
+
+
