@@ -1,6 +1,6 @@
 #ifndef CANNONBALL_H
 #define CANNONBALL_H
-
+#include <vector>
 // Global values:
 #define PI 3.1415926535
 

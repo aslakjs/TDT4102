@@ -20,10 +20,19 @@ int main(void) {
 #if T_DEBUG
     // Toggle debug in "main.h": <0,1> or <false,true>
     // Enter max error below:
-    double maxError = 0.0001;
+    double maxError = 0.01;
+    double initVelX = 50.0;
+    double initVelY = 25.0;
+    double initPosX = 0.0;
+    double initPosY = 0.0;
+    vector<double> time = {0.0, 2.5, 5.0};
+    // ToOperands for errer:   {posx   posY   velY};
+    vector<double> t1operand = {0.0,   0.0,   25.0};
+    vector<double> t2operand = {125.0, 31.84, 0.475};
+    vector<double> t3operand = {250.0, 2.375, -24.05};
     
     // ~~Do not change ~~
-    testDeviation(maxError);
+    testDeviation(maxError, initVelX, initVelY, initPosX, initPosY, time, t1operand, t2operand, t3operand);
 #else
     // ~~~ Main-function content below: ~~~
     char mm;
@@ -57,71 +66,68 @@ void info(void) {
 }
 
 // Task 3b)
-void testDeviation(double maxError) {
+void testDeviation(double maxError, double initVelX, double initVelY, double initPosX, double initPosY, vector<double> time, vector<double> t1operand, vector<double> t2operand, vector<double> t3operand) {
     cout << "\n~~~Initiating complete test~~~" << endl;
     cout << "Maximum error in function: " << maxError << endl;
     // --- Time = 0.0 s ---------------------------
-    double time = 0.0;
     // posX
-    string nameOfFunction = "posX(0.0, 50.0, 0.0)";
-    double testOfFunction = posX(0.0, 50.0, 0.0);
-    double toOperand = 0.0; 
+    string nameOfFunction = "posX(" + to_string(initPosX) + ", " + to_string(initVelX) + ", " + to_string(time[0]) + ")";
+    double testOfFunction = posX(initPosX, initVelX, time[0]);
+    double toOperand = t1operand[0]; 
     double givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[0]);
     // posY
-    nameOfFunction = "posY(0.0, 25.0, 0.0)";
-    testOfFunction = posY(0.0, 25.0, 0.0);
-    toOperand = 0.0; 
+    nameOfFunction = "posY("+ to_string(initPosY) + ", " + to_string(initVelY) + ", " + to_string(time[0]) + ")";
+    testOfFunction = posY(initPosY, initVelY, time[0]);
+    toOperand = t1operand[1]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[0]);
     // velY
-    nameOfFunction = "velY(25.0, 0.0)";
-    testOfFunction = velY(25.0, 0.0);
-    toOperand = 25.0; 
+    nameOfFunction = "velY(" + to_string(initVelY) + ", " + to_string(time[0]) + ")";
+    testOfFunction = velY(initVelY, time[0]);
+    toOperand = t1operand[2]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[0]);
 
     // --- Time = 2.5 s --------------------
-    time = 2.5;
     // posX
-    nameOfFunction = "posX(0.0, 50.0, 2.5)";
-    testOfFunction = posX(0.0, 50.0, 2.5);
-    toOperand = 125.0; 
+    nameOfFunction = "posX(" + to_string(initPosX) + ", " + to_string(initVelX) + ", " + to_string(time[1]) + ")";
+    testOfFunction = posX(initPosX, initVelX, time[1]);
+    toOperand = t2operand[0]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[1]);
     // posY
-    nameOfFunction = "posY(0.0, 0.475, 2.5)";
-    testOfFunction = posY(0.0, 0.475, 2.5);
-    toOperand = 31.84; 
+    nameOfFunction = "posY("+ to_string(initPosY) + ", " + to_string(initVelY) + ", " + to_string(time[1]) + ")";
+    testOfFunction = posY(initPosY, initVelY, time[1]);
+    toOperand = t2operand[1]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[1]);
     // velY
-    nameOfFunction = "velY(25.0, 2.5)";
-    testOfFunction = velY(25.0, 2.5);
-    toOperand = 0.475; 
+    nameOfFunction = "velY(" + to_string(initVelY) + ", " + to_string(time[1]) + ")";
+    testOfFunction = velY(initVelY, time[1]);
+    toOperand = t2operand[2]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[1]);
 
     // --- Time = 5.0 s --------------------
-    time = 5.0;
     // posX
-    nameOfFunction = "posX(0.0, 50.0, 5.0)";
-    testOfFunction = posX(0.0, 50.0, 5.0);
-    toOperand = 250.0; 
+    nameOfFunction = "posX(" + to_string(initPosX) + ", " + to_string(initVelX) + ", " + to_string(time[2]) + ")";
+    testOfFunction = posX(initPosX, initVelX, time[2]);
+    toOperand = t3operand[0]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[2]);
     // posY
-    nameOfFunction = "posY(0.0, -24.05, 5.0)";
-    testOfFunction = posY(0.0, -24.05, 5.0);
-    toOperand = 2.375; 
+    nameOfFunction = "posY("+ to_string(initPosY) + ", " + to_string(initVelY) + ", " + to_string(time[2]) + ")";
+    testOfFunction = posY(initPosY, initVelY, time[2]);
+    toOperand = t3operand[1]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[2]);
     // velY
-    nameOfFunction = "velY(25.0, 5.0)";
-    testOfFunction = velY(25.0, 5.0);
-    toOperand = -24.05; 
+    nameOfFunction = "velY(" + to_string(initVelY) + ", " + to_string(time[2]) + ")";
+    testOfFunction = velY(initVelY, time[2]);
+    toOperand = t3operand[2]; 
     givenError = abs(abs(toOperand)-abs(testOfFunction));
-    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time);
+    testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[2]);
 }   
 
 void testPrint(string nameOfFunction, double maxError, double testOfFunction, double givenError, double toOperand, double time) {

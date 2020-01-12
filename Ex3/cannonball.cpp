@@ -16,12 +16,14 @@ double velY(double initVelocityY, double time) {
     return ( initVelocityY + (time * acclY()) );
 }
 
-// Task 2c) posY yields wrong position
+// Task 2c)
 double posX(double initPosition, double initVelocity, double time) {
     return ( initPosition + (initVelocity * time) + (( pow(time,2) * 0 ) / 2) );
 }
 double posY(double initPosition, double initVelocity, double time){
-    return ( initPosition + (initVelocity * time) + (( pow(time,2) * acclY() ) / 2) );
+    double pos = ( initPosition + (initVelocity * time) + (( pow(time,2) * acclY() ) / 2) );
+    if (pos < 0) {return 0;}
+    else {return pos;}
 }
 
 // Task 2d)
