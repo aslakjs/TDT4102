@@ -2,6 +2,7 @@
 ObjectOrientedC++
 
 Will include a somewhat reasonable way of solving the assignments in TDT4102.
+A local readme-file will be added for all subtasks in their respective folders.
 
 <br>
 
