@@ -1,4 +1,4 @@
-#include "../head/main.h"
+#include "main.h"
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
@@ -25,15 +25,16 @@ int main(void) {
         }
         cout << "\n\n";
     }
+    return 0;
 }
 
 
 void _task1(void) {
     double a, b;
     int n = 0;
-    char task;
+    char task = 'a';
 
-    while (task != 0) {
+    while (task != '0') {
         cout << "\n--------------------------------------------" << endl;
         cout << "[0] - Exit        | [a] - Største tall" << endl;
         cout << "[b] - Fibonacci   | [c] - Squared Number Sum" << endl;
@@ -192,4 +193,5 @@ double findGreatestDivisor(int n) {
             return div;
         }
     }
+    return 0;
 }
