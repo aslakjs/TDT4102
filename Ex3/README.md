@@ -4,8 +4,7 @@ A <i>somewhat reasonable</i> way of solving assignment 3.
 
 <br>
 
-<b>¡Note!</b>
-Program comes with a test/debug mode, which is turned to "false" by default. By toggling the debug to "true", you will bypass <b>all</b> main code.
+<b>¡Note!</b><br>Program comes with a test/debug mode, which is turned to "false" by default. By toggling the debug to "true", you will bypass <b>all</b> main code.
 
 <i><b>¡Change with care!</b></i>
 
