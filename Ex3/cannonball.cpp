@@ -92,11 +92,8 @@ vector<double> getVelocityVector(double theta, double absVelocity) {
     // Returning a vector with both velocity components:
     // vector = {x-velocity, y-velocity}
     vector<double> result(2,0);
-    //cout << "Velocity vector created." << endl;
     result[0] = getVelocityX(theta, absVelocity);
-    //cout << "Velocity x-component computed." << endl;
     result[1] = getVelocityY(theta, absVelocity);
-    //cout << "Velocity y-component computed." << endl;
     return result;
 }
 
