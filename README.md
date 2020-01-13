@@ -9,10 +9,9 @@ Branch contents:
 - Master (Done):
   - Assignment 1 (Python to C++)
   - Assignment 2 (Loops/Vectors)
+  - Assignment 3 (Game: Target Practise)
 
 - Dev (In Progress):
-  - Assignment 3:
-    - Task 4/5 Complete
   - Assignment 4:
   
 <br><br>
