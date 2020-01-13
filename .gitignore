@@ -1,6 +1,7 @@
 # Ignore root stuff:
 .vscode
 .DS_Store
+_config.yml
 
 # Ex1:
 Ex1/.DS_Store
