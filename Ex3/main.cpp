@@ -40,7 +40,8 @@ int main(void) {
 #else
     // ~~~ Main-function content below: ~~~
     char mm;
-    while (true) {
+    initRando();    // initiate rand()
+    while (true) {  // Main menu
         cout << "\n----------------------------" << endl;
         cout << "~~~~~~~~ Main-Menu ~~~~~~~~~" << endl;
         cout << "----------------------------" << endl;
@@ -60,45 +61,6 @@ int main(void) {
     }
 #endif
     return 0;
-}
-
-void _task4d(void) {
-    double distTarg;
-    cout << "\n\nLength to target [m]: ";
-    cin >> distTarg;
-    double vel = getUserInputAbsVelocity();
-    double deg = getUserInputTheta();
-    double rad = degToRad(deg);
-    //cout << "\nDegrees = " << rad << " radians." << endl;
-    vector<double> velXY = getVelocityVector(rad, vel);
-    //cout << "Velocities: x=" << velXY[0] << " and y=" << velXY[1] << endl;
-    double goal = targetPractise(distTarg, velXY[0], velXY[1]);
-    cout << "\n\nDistance to target [m]: " << distTarg << endl;
-    cout << endl;
-    if (goal == 0) {cout << "FFS, that's spot on. WOW!" << endl;}
-    else if (abs(goal) <= 10) {cout << "Close enough!" << endl;}
-    else if (abs(goal) <= 50) {cout << "You can do better than that!" << endl;}
-    else {cout << "Waaaay off target." << endl << endl;} 
-
-    waitForEnter();
-}
-
-void _task5(void) {
-    initRando();
-    playTargetPractise();
-    waitForEnter();
-}
-
-
-
-
-void info(void) {
-    for (int i = 0; i<50; i++) {cout << endl;}
-    cout << "---------------------------" << endl;
-    cout << "TITLE:  Assignment 3" << endl;
-    cout << "COURSE: TDT4102-Programming" << endl;
-    cout << "AUTHOR: Aslak J. Strand" << endl;
-    cout << "  (c)   Aslak J. Strand";
 }
 
 // Task 3b)
@@ -165,7 +127,6 @@ void testDeviation(double maxError, double initVelX, double initVelY, double ini
     givenError = abs(abs(toOperand)-abs(testOfFunction));
     testPrint(nameOfFunction, maxError, testOfFunction, givenError, toOperand, time[2]);
 }   
-
 void testPrint(string nameOfFunction, double maxError, double testOfFunction, double givenError, double toOperand, double time) {
     cout << endl << "~~~Initiating test~~~" << endl;
     cout << "Running test:  " << nameOfFunction << endl;
@@ -179,10 +140,49 @@ void testPrint(string nameOfFunction, double maxError, double testOfFunction, do
     waitForEnter();
 }
 
+void _task4d(void) {
+    double distTarg;
+    cout << "\n\nLength to target [m]: ";
+    cin >> distTarg;
+    double vel = getUserInputAbsVelocity();
+    double deg = getUserInputTheta();
+    double rad = degToRad(deg);
+    //cout << "\nDegrees = " << rad << " radians." << endl;
+    vector<double> velXY = getVelocityVector(rad, vel);
+    //cout << "Velocities: x=" << velXY[0] << " and y=" << velXY[1] << endl;
+    double goal = targetPractise(distTarg, velXY[0], velXY[1]);
+    cout << "\n\nDistance to target [m]: " << distTarg << endl;
+    cout << endl;
+    if (goal == 0) {cout << "FFS, that's spot on. WOW!" << endl;}
+    else if (abs(goal) <= 10) {cout << "Close enough!" << endl;}
+    else if (abs(goal) <= 50) {cout << "You can do better than that!" << endl;}
+    else {cout << "Waaaay off target." << endl << endl;} 
+
+    waitForEnter();
+}
+
+void _task5(void) {
+    playTargetPractise();   // Run gamemodule from utilities.cpp
+    waitForEnter();         // wait for enter key to continue
+}
+
+
+
+
 // Wait for enter-key
 inline void waitForEnter() {
     fseek(stdin,0,SEEK_END); // Clear input buffer
     do {cout << "Press Enter To Continue..";
     } while (cin.get()!='\n');
     for (int i = 0; i < 100; i++) {cout << endl;}
+}
+
+// Get info
+void info(void) {
+    for (int i = 0; i<50; i++) {cout << endl;}
+    cout << "---------------------------" << endl;
+    cout << "TITLE:  Assignment 3" << endl;
+    cout << "COURSE: TDT4102-Programming" << endl;
+    cout << "AUTHOR: Aslak J. Strand" << endl;
+    cout << "  (c)   Aslak J. Strand";
 }
