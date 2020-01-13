@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <iomanip>
 //#include "../head/task1.h"
 #include "task1.h"
 using namespace std;
@@ -40,7 +41,25 @@ bool isOdd(int odd) {
 
 // Task 1f)
 void printHumanReadableTime(int long time) {
-     
-    
+    int iTime = static_cast<int>(time);
+    int hh, mm, ss;
+    double ds = 0;
+    string ht = " hours";
+    string mt = " minutes";
+    string st = " seconds";
+    string tt = " seconds";
 
+    hh = iTime / 3600;          // get hours by deviding seconds into number of seconds in hour
+    mm = (iTime % 3600) / 60;   // get hours by deviding the rest of previous calc with number of seconds in minute
+    ss = iTime % 60;            // get seconds from rest of previous
+    ds = ss + (time - static_cast<int>(time)); // adding mili-seconds just to be sure
+
+    // Change text with regards to single/plural
+    if (hh == 1) {ht = " hour";}
+    if (mm == 1) {mt = " minute";}
+    if (ss == 1) {st = " second";}
+    if (iTime == 1) {tt = " second";}
+
+    // print flight time
+    cout << hh << ht << ", " << mm << mt << " and " << fixed << setprecision(2) << ds << st << endl;
 }

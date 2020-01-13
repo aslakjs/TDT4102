@@ -7,6 +7,24 @@
 
 using namespace Graph_lib;
 
+#define PI 3.1415926535
+
+/*  
+Definitions of <angles & sides
+    
+   <A    
+   |\     
+   | \     
+  a|  \c  
+   |   \  
+   |____\ 
+  <B  b <C
+
+
+    angle A = sin^(-1)(|b| / |c|)
+
+*/
+
 
 void pythagoras(void) {
     int w = 1000;
@@ -47,13 +65,21 @@ void pythagoras(void) {
     win.attach(squareTwo);
     
     // Right square setup:
-    int triHyp = getHyp((ly-ty),(rx-lx));   // Hypotenus for triangle
-    int thrHyp = getHyp(triHyp, triHyp);    // Diagonal for square three
-    int TRx = round(thrHyp/2);
-    squareThr.add(Point{tx+1,ty});                  // TL
-    squareThr.add(Point{rx+1,ry});                  // BL
-    squareThr.add(Point{(rx+TRx),(ly-(TRx/2))});    // BR
-    squareThr.add(Point{(tx+TRx),(ty-(TRx/2))});    // TR
+        // Get angles:
+    double side_a = ly-ty;
+    double side_b = rx-lx;
+    double side_c = getHyp(side_a, side_b);
+    //double degA = (asin(side_b / side_c))*(180/PI);
+    double degC = (asin(side_a / side_c))*(180/PI);
+    //double degB = 180 - (degA + degC);
+    double theta = 180 - (90 + degC);
+    int dx = static_cast<int>(round(cos(theta) * side_c));
+    int dy = static_cast<int>(round(sin(theta) * side_c));
+        // add positions:
+    squareThr.add(Point{tx+1,ty});            // TL
+    squareThr.add(Point{rx+1,ry});            // BL
+    squareThr.add(Point{(rx-dx),(ly-dy)});    // BR
+    squareThr.add(Point{(tx-dx),(ty-dy)});    // TR
     squareThr.set_fill_color(Color::blue);
     win.attach(squareThr);
     //
@@ -63,8 +89,5 @@ void pythagoras(void) {
 }
 
 int getHyp(double x, double y) {
-    return round(sqrt(pow(x,2) + pow(y,2)));
-}
-int getKat(double hyp, double kat1) {
-    return round(sqrt(pow(hyp,2) - (pow(kat1,2))));
+    return sqrt(pow(x,2) + pow(y,2));
 }
