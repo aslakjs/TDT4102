@@ -3,8 +3,10 @@ TITLE:  Assignment 3
 COURSE: TDT4102 - Programming
 AUTHOR: Aslak J. Strand (c)
 
-Note:
-    ~posY yields wrong position~
+Notes:
+    Debug mode can be toggled in main.h:
+        -> #define T_DEBUG true 
+        Will bypass regular code, debug mode ONLY
 ---------------------------------------------------*/
 
 #include <iostream>
