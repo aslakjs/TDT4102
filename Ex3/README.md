@@ -22,6 +22,5 @@ On startup you'll run into the main menu, from which you can choose between:
     - You get to shoot 10 times, try to hit a "hidden" target.
         - angle of fire and velocity entered manually in-game.
     - Terminal output only. No graphical interface.
-
-There is lots of comments within source code to supplement reading.
-Some stuff should be self explainatory.
+<br>
+There are lots of comments within source code to supplement reading.<br>Some stuff should be self explainatory.
