@@ -40,23 +40,7 @@ bool isOdd(int odd) {
 
 // Task 1f)
 void printHumanReadableTime(int long time) {
-    int hh, mm, ss;
-    string ht = " hours";
-    string mt = " minutes";
-    string st = " seconds";
-    string tt = " seconds";
-
-    hh = time / 3600;
-    mm = (time % 3600) / 60;
-    ss = time % 60;
-
-    if (hh == 1) {ht = " hour";}
-    if (mm == 1) {mt = " minute";}
-    if (ss == 1) {st = " second";}
-    if (time == 1) {tt = " second";}
-
-    cout << time << tt << " equals:" << endl;
-    cout << hh << ht << ", " << mm << mt << " and " << ss << st << endl;
+     
     
 
 }
