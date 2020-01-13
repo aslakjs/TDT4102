@@ -32,17 +32,21 @@ int main(void) {
     vector<double> t3operand = {250.0, 2.375, -24.05};
     
     // ~~Do not change ~~
+    // Task 4~
     testDeviation(maxError, initVelX, initVelY, initPosX, initPosY, time, t1operand, t2operand, t3operand);
+    // Task 5b)
+    //initRando(); cout << randomWithLimits(10,0) << endl;
+
 #else
     // ~~~ Main-function content below: ~~~
     char mm;
     while (true) {
-        cout << "\n---------------------------" << endl;
-        cout << "~~~~~~~~ Main-Menu ~~~~~~~~" << endl;
-        cout << "---------------------------" << endl;
+        cout << "\n----------------------------" << endl;
+        cout << "~~~~~~~~ Main-Menu ~~~~~~~~~" << endl;
+        cout << "----------------------------" << endl;
         cout << "[0] - Exit    | [i] - Info  " << endl;
-        cout << "[1] - Task 4d | [2] - TBD" << endl;
-        cout << "---------------------------" << endl;
+        cout << "[1] - Task 4d | [2] - Task 5" << endl;
+        cout << "----------------------------" << endl;
         cout << "Select task: ";
         cin >> mm;
     
@@ -50,6 +54,7 @@ int main(void) {
         case 'i': info(); break;
         case '0': cout << endl << endl; return 0;
         case '1': _task4d(); break;
+        case '2': _task5(); break;
         default: cout << "Unvalid input, try again!" << endl; break;
         }
     }
@@ -64,10 +69,11 @@ void _task4d(void) {
     double vel = getUserInputAbsVelocity();
     double deg = getUserInputTheta();
     double rad = degToRad(deg);
-    cout << "\nDegrees = " << rad << " radians." << endl;
+    //cout << "\nDegrees = " << rad << " radians." << endl;
     vector<double> velXY = getVelocityVector(rad, vel);
-    cout << "Velocities: x=" << velXY[0] << " and y=" << velXY[1] << endl;
+    //cout << "Velocities: x=" << velXY[0] << " and y=" << velXY[1] << endl;
     double goal = targetPractise(distTarg, velXY[0], velXY[1]);
+    cout << "\n\nDistance to target [m]: " << distTarg << endl;
     cout << endl;
     if (goal == 0) {cout << "FFS, that's spot on. WOW!" << endl;}
     else if (abs(goal) <= 10) {cout << "Close enough!" << endl;}
@@ -76,6 +82,15 @@ void _task4d(void) {
 
     waitForEnter();
 }
+
+void _task5(void) {
+    initRando();
+    playTargetPractise();
+    waitForEnter();
+}
+
+
+
 
 void info(void) {
     for (int i = 0; i<50; i++) {cout << endl;}

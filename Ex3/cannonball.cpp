@@ -46,7 +46,6 @@ void printTime(double time) {
     if (ss == 1) {st = " second";}
     if (iTime == 1) {tt = " second";}
 
-    cout << time << tt << " equals:" << endl;
     cout << hh << ht << ", " << mm << mt << " and " << fixed << setprecision(2) << ds << st << endl;
 }
 
@@ -79,11 +78,11 @@ double getVelocityY(double theta, double absVelocity) {
 }
 vector<double> getVelocityVector(double theta, double absVelocity) {
     vector<double> result(2,0);
-    cout << "Velocity vector created." << endl;
+    //cout << "Velocity vector created." << endl;
     result[0] = getVelocityX(theta, absVelocity);
-    cout << "Velocity x-component computed." << endl;
+    //cout << "Velocity x-component computed." << endl;
     result[1] = getVelocityY(theta, absVelocity);
-    cout << "Velocity y-component computed." << endl;
+    //cout << "Velocity y-component computed." << endl;
     return result;
 }
 
@@ -97,10 +96,9 @@ double getDistanceTraveled(double velocityX, double velocityY) {
 double targetPractise(double distanceToTarget, double velocityX, double velocityY) {
     double distX = getDistanceTraveled(velocityX, velocityY);
     double hit = distanceToTarget - distX;
-    cout << "\n\nDistance to target [m]: " << distanceToTarget << endl;
     cout << "Distance traveled [m]:      " << distX << endl;
     cout << "Missed by [m]:              " << hit << endl;
-    return hit;
+    return abs(hit);
 }
 
 
