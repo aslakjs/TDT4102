@@ -1,6 +1,5 @@
 # TDT4102 - Assignment 3
-<b>ObjectOrientedC++</b>
-A <i>somewhat reasonable</i> way of solving assignment 3.
+<b>ObjectOrientedC++</b><br>A <i>somewhat reasonable</i> way of solving assignment 3.
 
 <br>
 
@@ -10,7 +9,7 @@ A <i>somewhat reasonable</i> way of solving assignment 3.
 
 Default debug-function is predetermined to test calculations.<br><b>!etoN¡</b>
 <br>
-
+<br>
 <b> Instructions:</b>
 On startup you'll run into the main menu, from which you can choose between:
 - Exit      (char 0) (exits the program)
