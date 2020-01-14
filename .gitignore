@@ -23,3 +23,6 @@ Ex3/Makefile
 
 # Ex4
 Ex4/Makefile
+Ex4/Debug
+Ex4/Release
+Ex4/.vscode
