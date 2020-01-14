@@ -4,6 +4,9 @@
 _config.yml
 
 # Ex1:
+Ex1/.gitignore
+Ex1/Debug
+Ex1/Makefile
 Ex1/.DS_Store
 Ex1/.vscode
 Ex1/src/main
