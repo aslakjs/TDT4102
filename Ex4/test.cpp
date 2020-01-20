@@ -66,3 +66,26 @@ void testMedian(void) {
     testVectorSorting();
     threeB = false;
 }
+
+// task 4)
+void testStruct(void) {
+    char names[200];
+    char fos[300];
+    Student* stud = new Student;
+
+    fseek(stdin,0,SEEK_END);
+    cout << "Enter name: ";
+    cin.getline(names, 200);
+    stud->name = names;
+
+    cout << "Enter study program: ";
+    cin.getline(fos,300);
+    stud->studyProgram = fos;
+
+    cout << "Enter age: ";
+    cin >> stud->age;
+    cout << endl;
+
+    printStudent(stud);
+    
+}

@@ -74,3 +74,15 @@ double medianOfVector(vector<int> vect) {
     }
     return median;
 }
+
+
+// Task 4a)
+struct Student stud;
+
+// Task 4b)
+void printStudent(Student* stud) {
+    cout << endl;
+    cout << "Name: " << stud->name << endl;
+    cout << "Age:  " << stud->age << endl;
+    cout << "FoS:  " << stud->studyProgram << endl;
+}
