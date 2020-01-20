@@ -4,6 +4,7 @@
 // Include extra -h files:
 #include "test.h"
 #include "utilities.h"
+#include "playMaster.h"
 
 // Declarations:
 void _task1(void);

@@ -126,9 +126,11 @@ void testString(void) {
 
 // task 5f)
 void testInputString(void) {
-    string test;
-    test = readInputToString('f', 'a', 8);
-    cout << endl << "Final string: " << test << endl;
+    string test = "";
+    while (test != "0000") {
+        test = readInputToString('f', 'a', 4);
+        cout << endl << "Final string: " << test << endl;
+    }
 }
 
 // task 5g)

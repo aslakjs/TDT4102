@@ -27,6 +27,7 @@ int main(void) {
             case '3': _task3(); break;
             case '4': testStruct(); waitForEnter(); break;
             case '5': _task5(); break;
+            case '6': play(); waitForEnter(); break;
             default: cout << "Invalid choice, try again.";
         }
         for (int i = 0; i<50; i++) {cout << endl;}  // Adding whitespace at start of program

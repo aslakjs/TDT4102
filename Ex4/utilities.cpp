@@ -64,8 +64,6 @@ void sortVector(vector<int>& vect) {
 double medianOfVector(vector<int> vect) {
     // Using int vector (no ref) to make sure the values won't change.
     double median = 0;
-    //double mid1 = 0;
-    //double mid2 = 0;
     if ((vect.size() % 2) != 0) {
         median = vect[vect.size()/2];
     }
@@ -104,14 +102,15 @@ string randomizeString(int n, char lower, char upper) {
 
 // Task 5f)
 string readInputToString(char upper, char lower, int n) {
-    string result;
-    char temp[1];
+    string result = "";
+    char temp[10];
     cout << endl;
     for (int i = 0; i < n; i++) {
+        fseek(stdin,0,SEEK_END);
         cout << "Enter charchter #" << i+1 << ": ";
         cin >> temp;
-        if ((tolower(temp[0]) < tolower(lower)) || (tolower(temp[0]) > tolower(upper))) {
-            cout << "\nWrong input. Must be within: " << lower << "-" << upper << endl;
+        if ((temp[0] != '0') && ((tolower(temp[0]) < tolower(lower)) || (tolower(temp[0]) > tolower(upper)))) {
+            cout << "\nWrong input. Must be within: " << lower << "-" << upper << endl << endl;
             i--;
         }
         else {

@@ -2,6 +2,7 @@
 #define UTILITIES_H
 
 #include <vector>
+#include <string>
 
 // Declarations of structs:
 struct Student {
