@@ -40,9 +40,9 @@ void swapNumbers(int& dA, int& dB) {
 }
 
 // Task 2c)
-void randomizeVector(vector<int>& percentages, int n) {
+void randomizeVector(vector<int>& percentages, int n, int upper, int lower) {
     for (int i = 0; i < n; i++) {
-        percentages.push_back(rand() % 100);
+        percentages.push_back( lower + (rand() % (upper-lower)));
     }
 }
 
@@ -85,4 +85,49 @@ void printStudent(Student* stud) {
     cout << "Name: " << stud->name << endl;
     cout << "Age:  " << stud->age << endl;
     cout << "FoS:  " << stud->studyProgram << endl;
+}
+
+// Task 5b)
+string randomizeString(int n, char lower, char upper) {
+    string result;
+    vector<int>values (0,0);
+    
+    // task 5d) (get numbers from randovector function -> static-cast to char)
+    randomizeVector(values, n, static_cast<int>(upper), static_cast<int>(lower));
+
+    for (int i = 0; i < values.size(); i++) {
+        result += static_cast<char>(values[i]);
+    }
+
+    return result;
+}
+
+// Task 5f)
+string readInputToString(char upper, char lower, int n) {
+    string result;
+    char temp[1];
+    cout << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "Enter charchter #" << i+1 << ": ";
+        cin >> temp;
+        if ((tolower(temp[0]) < tolower(lower)) || (tolower(temp[0]) > tolower(upper))) {
+            cout << "\nWrong input. Must be within: " << lower << "-" << upper << endl;
+            i--;
+        }
+        else {
+            result += temp[0];
+        }
+    }
+    return result;
+}
+
+// Task 5g)
+int countChar(string str, char ch) {
+    int c = 0;
+    for (int i = 0; i < str.size(); i++) {
+        if (tolower(ch) == tolower(static_cast<char>(str[i]))) {
+            c++;
+        }
+    }
+    return c;
 }

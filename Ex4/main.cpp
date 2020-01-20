@@ -26,6 +26,7 @@ int main(void) {
             case '2': _task2(); break;
             case '3': _task3(); break;
             case '4': testStruct(); waitForEnter(); break;
+            case '5': _task5(); break;
             default: cout << "Invalid choice, try again.";
         }
         for (int i = 0; i<50; i++) {cout << endl;}  // Adding whitespace at start of program
@@ -137,6 +138,33 @@ void _task3(void) {
     }
 }
 
+void _task5(void) {
+    char m5 = '0';
+    
+    while (true) {
+        for (int i = 0; i<50; i++) {cout << endl;}
+        cout << "-----------------------------" << endl;
+        cout << "~~~~~~~~~~ Task 5 ~~~~~~~~~~~" << endl;
+        cout << "-----------------------------" << endl;
+        cout << "[0] - Exit    |              " << endl;
+        cout << "[e] - Task 5e | [f] - Task 5f" << endl;
+        cout << "[g] - Task 5g | [h] - Task 5h" << endl;
+        cout << "-----------------------------" << endl;
+        cout << "Your choice: ";
+        cin >> m5;
+
+        switch (m5) {
+            case '0': return;
+            case 'e': testString(); break;
+            case 'f': testInputString(); break;
+            case 'g': testCountChar(); break;
+            case 'h': task5h(); break;
+            default: cout << endl << "Wrong input, try again." << endl; break;
+        }
+        waitForEnter();
+    }
+}
+
 
 
 // --------------------------------------------------
@@ -148,6 +176,7 @@ void _mmText(void) {
     cout << "[0] - Exit   | [i] - Info  " << endl;
     cout << "[1] - Task 1 | [2] - Task 2" << endl;
     cout << "[3] - Task 3 | [4] - Task 4" << endl;
+    cout << "[5] - Task 5 | [6] - Task 6" << endl;
     cout << "---------------------------" << endl;
     cout << "Your choice: ";
 }
