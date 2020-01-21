@@ -39,31 +39,47 @@ int play(void) {
     
 #if TASK7
     MastermindWindow mwin{Point{900, 20}, winW, winH, "Mastermind"};
+    addGuess(mwin, code, size, 'A', -1, code);
 #endif /* !TASK7 */
+#if TASK7 && !DEB
+    hideSecret(mwin, size);
+#endif /* !TASK7 && !DEB */
 
     while ((corrPos < size) && (round <= lim)) {
 #if DEB
         cout << "\nCode  = " << code << endl;
 #endif /* !DEB */
-
 #if !TASK7
         cout << "Round " << round << "/10" << endl;
         guess.clear();
         guess = readInputToString(static_cast<char>('A' + (letters-1)), 'A', size);
         if (guess == "0000") {break;}
-
         cout << "\nGuess = " << guess << endl;
 #else
         guess = mwin.getInput(4, 'A', 'F');
 #endif /* !TASK7 */
-
         corrPos = checkCharNPos(code, guess);
         corrChr = checkChar(code, guess);
-
+#if DEB
+        cout << endl << "Your guess was: " << guess;
+        cout << endl << "Num of cor.pos: " << corrPos;
+        cout << endl << "Num of cor.chr: " << corrChr << endl << endl;
+#endif /* !DEB */
+#if TASK7
+        addGuess(mwin, code, size, 'A', round, guess);
+        addFeedback(mwin, corrPos, corrChr, size, round);
+#endif /* !TASK7 */
+#if !TASK7
         cout << endl << "Number of correct char and pos: " << corrPos << endl;
         cout << "Number of correct char only:    " << corrChr << endl << endl;
+#endif /* !TASK7 */
         round++;
     }
+#if TASK7
+    addGuess(mwin, code, size, 'A', -1, code);
+    mwin.redraw();
+#endif /* !TASK7 */
+
     if (corrPos == size) {
         cout << "Yay, you won! =)" << endl;
     }
@@ -89,9 +105,9 @@ int checkCharNPos(string code, string guess) {
 int checkChar(string c, string g) {
     int num = 0;
     for (int i = 0; i < c.size(); i++) {
-        if ( c.find(g[i]) != string::npos ) {
+        if ( c.find(toupper(g[i])) != string::npos ) {
             num++; 
-            c[c.find(g[i])] = '-';
+            c[c.find(toupper(g[i]))] = '-';
             }
 #if DEB
         cout << "Check: " << c << endl;

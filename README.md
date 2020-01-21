@@ -11,10 +11,10 @@ Branch contents:
   - Assignment 1 (Python to C++)
   - Assignment 2 (Loops/Vectors)
   - Assignment 3 (Game: Target Practise)
+  - Assignment 4 (Game: Mastermind)
 
 - Dev (In Progress):
-  - Assignment 4:
-    - Task 6/7 complete.
+  - Waiting for new assignments...
   
 <br><br>
 
