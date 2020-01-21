@@ -14,8 +14,7 @@ Branch contents:
 
 - Dev (In Progress):
   - Assignment 4:
-    - Task 6/7 ish complete.
-    - Some minor error in task 6
+    - Task 6/7 complete.
   
 <br><br>
 
