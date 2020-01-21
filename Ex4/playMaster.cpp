@@ -7,12 +7,16 @@ Macros are defined in playMaster.h
 
 #include "playMaster.h"
 #include "utilities.h"
+#include "masterVisual.h"
+#include "Graph.h"
+#include "Simple_window.h"
 #include <iostream>
 #include <string.h> // find()
 
 using namespace std;
+using namespace Graph_lib;
 
-void play(void) {
+int play(void) {
     constexpr int size = 4;
     constexpr int letters = 6;
     constexpr int lim = 10;
@@ -33,21 +37,31 @@ void play(void) {
 
     code = randomizeString(size, 'A', static_cast<char>('A' + (letters-1)));
     
+#if TASK7
+    MastermindWindow mwin{Point{900, 20}, winW, winH, "Mastermind"};
+#endif /* !TASK7 */
+
     while ((corrPos < size) && (round <= lim)) {
 #if DEB
         cout << "\nCode  = " << code << endl;
 #endif /* !DEB */
 
+#if !TASK7
         cout << "Round " << round << "/10" << endl;
         guess.clear();
         guess = readInputToString(static_cast<char>('A' + (letters-1)), 'A', size);
+        if (guess == "0000") {break;}
+
         cout << "\nGuess = " << guess << endl;
+#else
+        guess = mwin.getInput(4, 'A', 'F');
+#endif /* !TASK7 */
 
         corrPos = checkCharNPos(code, guess);
         corrChr = checkChar(code, guess);
 
         cout << endl << "Number of correct char and pos: " << corrPos << endl;
-        cout << "Number of correct char only: " << corrChr << endl << endl;
+        cout << "Number of correct char only:    " << corrChr << endl << endl;
         round++;
     }
     if (corrPos == size) {
@@ -56,6 +70,12 @@ void play(void) {
     else {
         cout << "You lost! =(" << endl;
     }
+
+#if TASK7
+    return gui_main();
+#else
+    return 0;
+#endif /* !TASK7 */
 }
 
 int checkCharNPos(string code, string guess) {
@@ -68,9 +88,8 @@ int checkCharNPos(string code, string guess) {
 
 int checkChar(string c, string g) {
     int num = 0;
-    cout << "size: " << c.size() << endl;
     for (int i = 0; i < c.size(); i++) {
-        if ( c.find(g[i] > 0) ) {
+        if ( c.find(g[i]) != string::npos ) {
             num++; 
             c[c.find(g[i])] = '-';
             }
@@ -79,4 +98,8 @@ int checkChar(string c, string g) {
 #endif /* !DEB */
     }
     return num;
+}
+
+void playgraphics(void) {
+    cout << "\n\n~~ Change task7-macro in playMaster.h, and run task 6 ~~" << endl << endl;
 }

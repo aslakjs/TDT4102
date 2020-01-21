@@ -28,6 +28,7 @@ int main(void) {
             case '4': testStruct(); waitForEnter(); break;
             case '5': _task5(); break;
             case '6': play(); waitForEnter(); break;
+            case '7': playgraphics(); waitForEnter(); break;
             default: cout << "Invalid choice, try again.";
         }
         for (int i = 0; i<50; i++) {cout << endl;}  // Adding whitespace at start of program
@@ -178,6 +179,7 @@ void _mmText(void) {
     cout << "[1] - Task 1 | [2] - Task 2" << endl;
     cout << "[3] - Task 3 | [4] - Task 4" << endl;
     cout << "[5] - Task 5 | [6] - Task 6" << endl;
+    cout << "[7] - Task 7 | " << endl;
     cout << "---------------------------" << endl;
     cout << "Your choice: ";
 }

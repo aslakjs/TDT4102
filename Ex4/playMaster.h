@@ -4,12 +4,13 @@
 #include <string>
 
 #define THEORY false
-#define DEB true
+#define DEB false
+#define TASK7 true
 
 // Function declarations:
-void play(void);
+int play(void);
 int checkCharNPos(std::string code = "AAAA", std::string guess = "AAAA");
 int checkChar(std::string code = "AAAA", std::string guess = "AAAA");
-
+void playgraphics(void);
 
 #endif /* !PLAYMASTER_H */
