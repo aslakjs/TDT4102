@@ -6,6 +6,7 @@ Will include a somewhat reasonable way of solving the assignments in TDT4102.
 
 <br>
 NOTES:
+
 Under /Extra/ there's a .zip-file with configurations for MacOS.
 The file includes:
   - #include files for project
