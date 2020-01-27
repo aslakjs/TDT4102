@@ -14,7 +14,7 @@ Branch contents:
   - Assignment 4 (Game: Mastermind)
 
 - Dev (In Progress):
-  - Waiting for new assignments...
+  - Assignment 5
   
 <br><br>
 
