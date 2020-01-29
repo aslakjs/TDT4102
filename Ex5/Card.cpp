@@ -15,7 +15,17 @@ string Card::getRank(void) {
     return rankToString(r);
 }
 string Card::toString(void) {
-
+    return (getRank() + " of " + getSuit());
+}
+string Card::toStringShort(void) {
+    string tempS = getSuit();
+    return (tempS[0] + ShortRank.at(r));
+}
+void Card::setSuit(int su) {
+    s = StringSuit.at(su);
+}
+void Card::setRank(int ra){
+    r = IntRank.at(ra);
 }
 
 // Stand-alone:
