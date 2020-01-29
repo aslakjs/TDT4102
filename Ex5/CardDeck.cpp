@@ -13,6 +13,7 @@ CardDeck::CardDeck() {
         }
     }
 }
+
 void CardDeck::printDeck(void) {
     for (int i = 0; i < deck.size(); i++) {
         cout << "Card #" << i+1 << ": \t" << deck[i].toString() << endl;
@@ -49,4 +50,24 @@ const Card CardDeck::drawCard(void) {
 #endif /* !DEB */
 
     return draw;
+}
+void CardDeck::reset(void) {
+    int max = deck.size();
+    Card c(Suit::spades, Rank::ace);
+#if DEB
+    cout << "\nNumber of cards in deck: " << max << endl;
+#endif /* !DEB */
+    for (int i = 0; i < max; i++) {
+        deck.pop_back();
+#if DEB
+        cout << "Popping card " << i+1 << " of " << max << endl;
+#endif /* !DEB */
+    }
+    for (int s = 1; s <= 4; s++) {
+        for (int r = 2; r<=14; r++) {
+            c.setSuit(s);
+            c.setRank(r);
+            deck.push_back(c);
+        }
+    }
 }

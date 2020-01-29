@@ -114,7 +114,7 @@ void _task3(void) {
         cout << "[a] - Task 1a  | [b] - Task 1b" << endl;
         cout << "[c] - Task 1c  | [d] - Task 1d" << endl;
 		cout << "[e] - Task 1e  | [f] - Task 1f" << endl;
-		cout << "[g] - Task 1e  | " << endl;
+		cout << "[g] - Task 1e  | [r] - RESET  " << endl;
         cout << "------------------------------" << endl;
         cout << "Your choice: ";
         cin >> m3;
@@ -143,6 +143,10 @@ void _task3(void) {
                 break;
 			case 'g': 
                 cd->drawCard();
+                break;
+            case 'r':
+                cd->reset();
+                cd->printDeck();
                 break;
             default: cout << endl << "Wrong input, try again." << endl; break;
         }

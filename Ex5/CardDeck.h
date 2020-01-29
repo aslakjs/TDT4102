@@ -14,6 +14,7 @@ public:
     void printShort(void);
     void shuffle(void);
     const Card drawCard(void);
+    void reset(void);
 };
 
 #endif /* !CARDDECK_H */
