@@ -11,11 +11,11 @@ Notes:
 #include "std_lib_facilities.h"
 #include "Card.h"
 #include "CardDeck.h"
-#include "deb.h"
+#include "Blackjack.h"
 
 #if TEST 		// IF test-mode TRUE, change in deb.h
 #include "test.h"
-#endif /* !TEST */
+#endif /* TEST */
 
 using namespace std;
 
@@ -47,10 +47,11 @@ int main() {
 			case '1': _task1(); waitForEnter(); break;
 			case '2': _task2(); break;
 			case '3': _task3(); break;
+            case '4': playBlackJack(); break;
 			default: cout << "\n\nWrong input, try again.. \n\n"; break;
 		}
 	}
-#endif /* !TEST */
+#endif /* TEST */
 	return 0;
 }
 
@@ -126,7 +127,7 @@ void _task3(void) {
             case 'c': 
 #if THEORY
                 cout << "\n\nThis function should be public,\nas swapping around cards is wastly used in any card-game." << endl << endl;
-#endif /* !THEORY */
+#endif /* THEORY */
                 cout << "\nSee CardDeck.h og CardDeck.cpp" << endl;
                 break;
             case 'd':

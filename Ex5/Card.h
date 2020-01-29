@@ -58,6 +58,20 @@ const std::map<const Rank, std::string> RankString {
     {Rank::queen, "Queen"},
     {Rank::king, "King"}
 };
+const std::map<const std::string, int> RankInt {
+    {"Two",2},
+    {"Three",3},
+    {"Four",4},
+    {"Five",5},
+    {"Six",6},
+    {"Seven",7},
+    {"Eight",8},
+    {"Nine",9},
+    {"Ten",10},
+    {"Jack",11},
+    {"Queen",12},
+    {"King",13}
+};
 const std::map<const int, Rank> IntRank {
     {2,Rank::two},
     {3,Rank::three},

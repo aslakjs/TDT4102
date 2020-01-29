@@ -23,7 +23,7 @@ Branch contents:
   - Assignment 4 (Game: Mastermind)
 
 - Dev (In Progress):
-  - Assignment 5
+  - Assignment 5 (Class-ception...)
     - Task 3 / 4 complete.
   
 <br><br>

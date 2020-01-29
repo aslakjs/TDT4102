@@ -3,6 +3,6 @@
 
 #define TEST false
 #define THEORY true
-#define DEB true
+#define DEB false
 
 #endif /* !DEB_H */
