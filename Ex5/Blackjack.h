@@ -3,10 +3,6 @@
 
 #include "CardDeck.h"
 
-// Function declarations:
-void playBlackJack(void);
-inline void waitForEnter(void);
-
 // Class declarations:
 class BlackJack {
 private:
@@ -15,6 +11,8 @@ private:
     const int goal = 21;    // Goal=21
     const int dMAX = 17;    // Dealer max
     double pot;             // game-pot
+    double buyIn;           // Buy-in, set by House
+    vector<int>timesReBuy;  // Number of times dealer has bought in after start
     vector<double>wallet;   // cash on hand by house, player 1 ... player n
     vector<int>sum;         // Accumulated sum of cards
 

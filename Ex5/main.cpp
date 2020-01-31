@@ -12,6 +12,7 @@ Notes:
 #include "Card.h"
 #include "CardDeck.h"
 #include "Blackjack.h"
+#include "playGame.h"
 
 #if TEST 		// IF test-mode TRUE, change in deb.h
 #include "test.h"

@@ -21,11 +21,10 @@ Branch contents:
   - Assignment 2 (Loops/Vectors)
   - Assignment 3 (Game: Target Practise)
   - Assignment 4 (Game: Mastermind)
+  - Assignment 5 (Class + Game: BlackJack)
 
 - Dev (In Progress):
-  - Assignment 5 (Class-ception...)
-    - Task 4 / 4 complete.
-    - Need somme more testing before pushing to master.
+  - Waiting for new assignments..
   
 <br><br>
 
