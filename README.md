@@ -24,7 +24,8 @@ Branch contents:
 
 - Dev (In Progress):
   - Assignment 5 (Class-ception...)
-    - Task 3 / 4 complete.
+    - Task 4 / 4 complete.
+    - Need somme more testing before pushing to master.
   
 <br><br>
 
