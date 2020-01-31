@@ -186,7 +186,7 @@ void _mmText(void) {
 void _info(void) {
     for (int i = 0; i<50; i++) {cout << endl;}
     cout << "---------------------------" << endl;
-    cout << "TITLE:  Assignment 3       " << endl;
+    cout << "TITLE:  Assignment 4       " << endl;
     cout << "COURSE: TDT4102-Programming" << endl;
     cout << "AUTHOR: Aslak J. Strand    " << endl;
     cout << "  (c)   Aslak J. Strand    " << endl;

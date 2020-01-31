@@ -27,3 +27,9 @@ Ex4/Makefile
 Ex4/Debug
 Ex4/Release
 Ex4/.vscode
+
+# Ex5
+Ex5/Makefile
+Ex5/Debug
+Ex5/Release
+Ex5/.vscode
