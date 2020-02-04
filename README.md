@@ -24,7 +24,7 @@ Branch contents:
   - Assignment 5 (Class + Game: BlackJack)
 
 - Dev (In Progress):
-  - Waiting for new assignments..
+  - Assignment 6
   
 <br><br>
 
