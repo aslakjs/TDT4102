@@ -25,6 +25,7 @@ Branch contents:
 
 - Dev (In Progress):
   - Assignment 6
+    - Task 1/5 Complete.
   
 <br><br>
 
