@@ -1,6 +1,10 @@
+#include "deb.h"
 #include "task1.h"
-#include <iostream>
 #include "fstream"
+#include <iostream>
+#include <vector>
+
+
 
 using namespace std;
 
@@ -14,10 +18,11 @@ void cinToFile(void) {
         cout << "Open new file, or continue with old? [1] - new, [0] - old: ";
         cin >> newFile;
         if (newFile) {
-            remove("task1.txt");
+            remove("txtFiles/task1.txt");
             cout << "File successfully removed." << endl;
         }
-        toFile.open("task1.txt", fstream::in | fstream::app);
+        toFile.close();
+        toFile.open("txtFiles/task1.txt", fstream::out | fstream::app);
     }
     catch (ios_base::failure err) {
         // If unable to open file for whatever reason:
@@ -45,5 +50,35 @@ void cinToFile(void) {
 
 // Task 1b)
 void fileToFile(void) {
-    
+    fstream fileHandeler;
+    string temp;
+    vector<string>fileData;
+    // Read from file:
+    try {
+        fileHandeler.open("txtFiles/task1.txt", ios_base::in);
+    }
+    catch(ios_base::failure error) {
+        cout << "\nUnable to write to file:\n" << error.what() << endl;
+    }
+    while (!fileHandeler.eof()) {
+        getline(fileHandeler,temp,'/');
+        fileData.push_back(temp);
+    }
+    fileHandeler.close();
+#if DEB_TXT // Check data before cout to new file
+    for (int i = 0; i < fileData.size(); i++) {
+        cout << endl << fileData[i];
+    }
+#endif
+
+    // Write to new file:
+    try {
+        fileHandeler.open("txtFiles/task1_new.txt", ios_base::out | ios_base::trunc);
+    }
+    catch(ios_base::failure error) {
+        cout << "\nUnable to write to file:\n" << error.what() << endl;
+    }
+    for (int i = 0; i < fileData.size(); i++) {
+        fileHandeler << fileData[i] << endl;
+    }
 }
