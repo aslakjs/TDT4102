@@ -17,7 +17,7 @@ using namespace std;
 // Declarations
 void _mm(void);		// Main Menu text
 void _task1(void);	// Task 1 menu
-void _task2(void);	// Task 2 menu
+void _task3(void);	// Task 3 menu
 
 int main() {
 	char mm = 'a';
@@ -27,8 +27,9 @@ int main() {
 
 		switch (mm) {
 			case '0': return 0;
-			case '1': _task1();
-			default: cout << "Wrong input, try again."; break;
+			case '1': _task1(); break;
+			case '2': countChar(); keep_window_open(); break;
+			default: cout << "Wrong input, try again." << endl; keep_window_open(); break;
 		}
 	}
 }
@@ -62,14 +63,15 @@ void _task1(void) {
 			case '0': return;
 			case 'a': cinToFile(); break;
 			case 'b': fileToFile(); break;
+			default: cout << "Wrong input, try again." << endl; break;
 		}
 		cout << endl;
 		keep_window_open();
 	}
 }
-void _task2(void) {
-	char m2 = 'a';
-	while (m2 != '0') {
+void _task3(void) {
+	char m3 = 'a';
+	while (m3 != '0') {
 		for (int i = 0; i<50; i++) {cout << endl;}
 		cout << "-----------------------------" << endl;
 		cout << "~~~~~~~~~~~ Task2 ~~~~~~~~~~~" << endl;
@@ -78,12 +80,12 @@ void _task2(void) {
 		cout << "[a] - Task 2a | [b] - Task 2b" << endl;
 		cout << "-----------------------------" << endl;
 		cout << "Your choice: ";
-		cin >> m2;
+		cin >> m3;
 
-		switch (m2) {
+		switch (m3) {
 			case '0': return;
 			case 'a':  break;
-			case 'b':  break;
+			default: cout << "Wrong input, try again." << endl; break;
 		}
 		cout << endl;
 		keep_window_open();
