@@ -1,5 +1,5 @@
 #include "task2.h"
-#include "deb.h"
+#include "def.h"
 #include <iostream>
 #include <fstream>
 
@@ -14,8 +14,8 @@ void countChar(void) {
         cout << "\nUse file from task 1 or grunnlovs-data?" << endl;
         cout << "[1] = Grunnlov, [0] = task1: ";
         cin >> choice;
-        if (choice) {fileHandler.open("givenFiles/grunnlov.txt", ios_base::in);}
-        else {fileHandler.open("txtFiles/task1.txt", ios_base::in);}
+        if (choice) {fileHandler.open(PATH_G, ios_base::in);}
+        else {fileHandler.open(PATH_1, ios_base::in);}
         while (!fileHandler.eof()) {
             fileHandler >> temp;
             //temp = tolower(temp);

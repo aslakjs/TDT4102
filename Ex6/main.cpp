@@ -10,8 +10,10 @@ Notes:
 
 #include <iostream>
 #include "std_lib_facilities.h"
+#include "def.h"	// Hard definitions
 #include "task1.h"	// Task 1 code
 #include "task2.h"	// Task 2 code
+#include "task3.h" 	// Task 3 code
 using namespace std;
 
 // Declarations
@@ -28,13 +30,21 @@ int main() {
 		switch (mm) {
 			case '0': return 0;
 			case '1': _task1(); break;
-			case '2': countChar(); keep_window_open(); break;
-			default: cout << "Wrong input, try again." << endl; keep_window_open(); break;
+			case '2': countChar(); waitForEnter(); break;
+			case '3': _task3(); break;
+			default: cout << "Wrong input, try again." << endl; waitForEnter(); break;
 		}
 	}
 }
 
-
+// Wait for enter-key
+inline void waitForEnter(void) {
+    cout << endl;
+    fseek(stdin,0,SEEK_END); // Clear input buffer
+    do {cout << "Press Enter To Continue..";
+    } while (cin.get()!='\n');
+    for (int i = 0; i < 100; i++) {cout << endl;}
+}
 void _mm(void) {
 	for (int i = 0; i<50; i++) {cout << endl;}
 	cout << "-----------------------------" << endl;
@@ -66,28 +76,35 @@ void _task1(void) {
 			default: cout << "Wrong input, try again." << endl; break;
 		}
 		cout << endl;
-		keep_window_open();
+		waitForEnter();
 	}
 }
 void _task3(void) {
 	char m3 = 'a';
+	CourseCatalog *CC = new CourseCatalog;
 	while (m3 != '0') {
 		for (int i = 0; i<50; i++) {cout << endl;}
 		cout << "-----------------------------" << endl;
-		cout << "~~~~~~~~~~~ Task2 ~~~~~~~~~~~" << endl;
+		cout << "~~~~~~~~~~~ Task3 ~~~~~~~~~~~" << endl;
 		cout << "-----------------------------" << endl;
-		cout << "[0] - Exit    |   " << endl;
-		cout << "[a] - Task 2a | [b] - Task 2b" << endl;
+		cout << "[0] - Exit    | [i] - Info  " << endl;
+		cout << "[a] - Add     | [r] - Remove" << endl;
+		cout << "[c] - Test    | [p] - Print  " << endl;
 		cout << "-----------------------------" << endl;
 		cout << "Your choice: ";
 		cin >> m3;
 
 		switch (m3) {
 			case '0': return;
-			case 'a':  break;
+			case 'i': cout << "\nTask 3a, b, d & e can be seen in source code." << endl; break;
+			case 'a': CC->addCource(); break;
+			case 'r': CC->removeCource(); break;
+			case 'c': testCatalog(CC); break;
+			case 'p': CC->getCource("-1"); break;
 			default: cout << "Wrong input, try again." << endl; break;
 		}
 		cout << endl;
-		keep_window_open();
+		CC->mapOut(); 
+		waitForEnter();
 	}
 }

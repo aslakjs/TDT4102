@@ -1,4 +1,4 @@
-#include "deb.h"
+#include "def.h"
 #include "task1.h"
 #include "fstream"
 #include <iostream>
@@ -18,11 +18,11 @@ void cinToFile(void) {
         cout << "Open new file, or continue with old? [1] - new, [0] - old: ";
         cin >> newFile;
         if (newFile) {
-            remove("txtFiles/task1.txt");
+            remove(PATH_1);
             cout << "File successfully removed." << endl;
         }
         toFile.close();
-        toFile.open("txtFiles/task1.txt", fstream::out | fstream::app);
+        toFile.open(PATH_1, fstream::out | fstream::app);
     }
     catch (ios_base::failure err) {
         // If unable to open file for whatever reason:
@@ -55,7 +55,7 @@ void fileToFile(void) {
     vector<string>fileData;
     // Read from file:
     try {
-        fileHandeler.open("txtFiles/task1.txt", ios_base::in);
+        fileHandeler.open(PATH_1, ios_base::in);
     }
     catch(ios_base::failure error) {
         cout << "\nUnable to write to file:\n" << error.what() << endl;
@@ -73,7 +73,7 @@ void fileToFile(void) {
 
     // Write to new file:
     try {
-        fileHandeler.open("txtFiles/task1_new.txt", ios_base::out | ios_base::trunc);
+        fileHandeler.open(PATH_1N, ios_base::out | ios_base::trunc);
     }
     catch(ios_base::failure error) {
         cout << "\nUnable to write to file:\n" << error.what() << endl;
