@@ -151,7 +151,7 @@ void _task45(void) {
 			case 'a': cout << "See task4and5.h" << endl; break;
 			case 'b': cout << "See task4and5.cpp" << endl; break;
 			case 'c': testOperator(); break;
-			case '5': break;
+			case '5': graphData(); break;
 			default: cout << "Wrong input, try again." << endl; break;
 		}
 		cout << endl;
