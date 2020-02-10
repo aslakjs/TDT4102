@@ -33,3 +33,10 @@ Ex5/Makefile
 Ex5/Debug
 Ex5/Release
 Ex5/.vscode
+
+# Ex6
+Ex6/Makefile
+Ex6/Debug
+Ex6/Release
+Ex6/.vscode
+Ex6/txtFiles

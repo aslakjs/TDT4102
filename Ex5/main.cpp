@@ -145,6 +145,7 @@ void _task3(void) {
                 break;
 			case 'g': 
                 cd->drawCard();
+                cd->printDeck();
                 break;
             case 'r':
                 cd->reset();

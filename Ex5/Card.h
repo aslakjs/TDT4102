@@ -68,9 +68,9 @@ const std::map<const std::string, int> RankInt {
     {"Eight",8},
     {"Nine",9},
     {"Ten",10},
-    {"Jack",11},
-    {"Queen",12},
-    {"King",13}
+    {"Jack",10},
+    {"Queen",10},
+    {"King",10}
 };
 const std::map<const int, Rank> IntRank {
     {2,Rank::two},

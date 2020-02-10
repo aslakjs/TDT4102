@@ -22,9 +22,10 @@ Branch contents:
   - Assignment 3 (Game: Target Practise)
   - Assignment 4 (Game: Mastermind)
   - Assignment 5 (Class + Game: BlackJack)
+  - Assignment 6 (ifstream + graphs)
 
 - Dev (In Progress):
-  - Waiting for new assignments..
+  - Assignment 7
   
 <br><br>
 
