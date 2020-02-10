@@ -1,3 +1,13 @@
+/*----------------------------------------------------
+TITLE:  Assignment 6: Task 3
+COURSE: TDT4102 - Programming
+AUTHOR: Aslak J. Strand (c)
+
+Notes:
+    - Paths to files are defined in def.h
+    - Will create files if not exists.
+---------------------------------------------------*/
+
 #include "task3.h"
 #include "def.h"
 #include <iostream>
