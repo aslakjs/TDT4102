@@ -23,9 +23,10 @@ Branch contents:
   - Assignment 4 (Game: Mastermind)
   - Assignment 5 (Class + Game: BlackJack)
   - Assignment 6 (ifstream + graphs)
+  - Assignment 7 (Classes and graphics)
 
 - Dev (In Progress):
-  - Assignment 7
+  - 
   
 <br><br>
 
