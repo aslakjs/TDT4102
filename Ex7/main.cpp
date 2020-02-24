@@ -9,6 +9,7 @@ Notes:
 
 #include <iostream>
 #include "test.h"
+#include "drawMain.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ void _mm(void);
 void _cc(void);
 inline void waitForEnter(void);
 void _task1(void);
+void _task3(void);
 
 int main() {
 	char mm = 'a';
@@ -27,6 +29,9 @@ int main() {
 			case '0': return 0;
 			case 'i': _cc(); break;
 			case '1': _task1(); break;
+			case '2': cout << "See drawMain.h and drawMain.cpp." << endl; waitForEnter(); break;
+			case '3': cout << "See face.h and face.cpp." << endl; waitForEnter(); break;
+			case '4': drawMain(); break;
 			default: cout << "Wrong input, try again." << endl; waitForEnter(); break;
 		}
 	}
@@ -58,15 +63,12 @@ void _task1(void) {
 			case 'b': cout << "\nSee animal.h" << endl; break;
 			case 'c': cout << "\nSee animal.h" << endl; break;
 			case 'd': testAnimal(); break;
-			case 'e': break;
+			case 'e': cout << "\nSee animal.h" << endl; break;
 			default: cout << "Wrong input, try again." << endl; waitForEnter(); break;
 		}
-
 		waitForEnter();
  	}
 }
-
-
 
 
 // Wait for enter-key

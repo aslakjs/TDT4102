@@ -11,6 +11,7 @@ public:
     Animal(std::string str, int num);
     //virtual std::string toString(void) {return ("Animal: " + name + ", " + std::to_string(age));}
     virtual std::string toString(void) = 0; // Pure virtual version
+    virtual ~Animal() {}
 };
 
 
