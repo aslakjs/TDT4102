@@ -58,7 +58,6 @@ void _task1(void) {
 				cout << "\nPublic:    accessible outside class" << endl;
 				cout << "Private:   ONLY accessible inside class" << endl;
 				cout << "Protected: Accessible in hiarchy-classes bound to the spesific class." << endl << endl;
-				waitForEnter();
 				break;
 			case 'b': cout << "\nSee animal.h" << endl; break;
 			case 'c': cout << "\nSee animal.h" << endl; break;
