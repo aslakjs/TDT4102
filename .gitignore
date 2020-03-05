@@ -46,3 +46,16 @@ Ex7/Makefile
 Ex7/Debug
 Ex7/Release
 Ex7/.vscode
+
+
+# Ex8
+Ex8/Makefile
+Ex8/Debug
+Ex8/Release
+Ex8/.vscode
+
+# Ex9
+Ex9/Mikefile
+Ex9/Debug
+Ex9/Release
+Ex9/.vscode
