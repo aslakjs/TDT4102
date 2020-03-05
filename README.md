@@ -26,7 +26,7 @@ Branch contents:
   - Assignment 7 (Classes and graphics)
 
 - Dev (In Progress):
-  - 
+  - Assignment 8 (Will be completed at a later time.)
   
 <br><br>
 
