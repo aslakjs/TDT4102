@@ -5,9 +5,9 @@ COURSE:  <i>TDT4102 - Programming</i>
 AUTHOR:  <i>Aslak J. Strand ©</i></pre><br>
 
 <b>Notes:</b>
-- Task2g: 
+- Task 2g: 
     - Not overloaded operator<<
-- Task5a and 5b: 
+- Task 5a and 5b: 
     - Not fully implemented overload <br> operator+= and operator+
 <br><br>
 
