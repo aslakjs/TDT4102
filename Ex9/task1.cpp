@@ -1,3 +1,9 @@
+/*----------------------------------------------------
+TITLE:  Assignment 9: task1.cpp
+COURSE: TDT4102 - Programming
+AUTHOR: Aslak J. Strand (c)
+----------------------------------------------------*/
+
 #include <iostream>
 #include "task1.h"
 using namespace std;

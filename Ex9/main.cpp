@@ -1,11 +1,23 @@
 /*----------------------------------------------------
-TITLE:  Assignment X
+TITLE:  Assignment 9
 COURSE: TDT4102 - Programming
 AUTHOR: Aslak J. Strand (c)
 
 Notes:
-    - Task2g) Not overloaded operator<<
----------------------------------------------------*/
+    - Task2g: Not overloaded operator<<
+	- Task5a and 5b: Not fully implemented 
+		overload operator+= and operator+
+
+Startup:
+	- Compile and run program.
+	- Main menu opens on startup
+		- Navigate menu by input character shown.
+		- ie: Input char(1) for [1] - Task 1
+	- Task 1 contains sepperate menu
+		- Input char(0) to return to main.
+	- Task 2-5 will automaticly loop back to main
+		when complete. 
+----------------------------------------------------*/
 
 #include <iostream>
 #include <string.h>
@@ -17,6 +29,7 @@ void _task1(void);
 void _task2(void);
 void _task3(void);
 void _task4(void);
+void _task5(void);
 void _cc(void);
 void _mm(void);
 inline void waitForEnter(void);
@@ -35,6 +48,7 @@ int main() {
 			case '2': _task2(); break;
 			case '3': _task3(); break;
 			case '4': _task4(); break;
+			case '5': _task5(); break;
 			default: cout << "Wrong input, try again." << endl; waitForEnter(); break;
 		}
 	}
@@ -141,7 +155,50 @@ void _task4(void) {
 
 	theMatrix->set(1,1,9);
 }
+void _task5(void) {
+	for (int i = 0; i<50; i++) {cout << endl;}
+	cout << "---------------------------------" << endl;
+	cout << "~~~~~~~~~~~~ Task: 4 ~~~~~~~~~~~~" << endl;
+	cout << "---------------------------------" << endl << endl;
 
+	Matrix *A = new Matrix(2,2);
+	Matrix *B = new Matrix(2,2);
+	Matrix *C = new Matrix(2,2);
+
+	// Init Matrix A:
+	A->set(0,0,1);		A->set(0,1,2);
+	A->set(1,0,3);		A->set(1,1,4);
+
+	// Init Matrix B:
+	B->set(0,0,4);		B->set(0,1,3);
+	B->set(1,0,2);		B->set(1,1,1);
+
+	// Init Matrix c:
+	C->set(0,0,1);		C->set(0,1,3);
+	C->set(1,0,1.5);	C->set(1,1,2);
+
+	cout << "\nA:\n";
+	A->printMatrix();
+	waitForEnter();
+	cout << "\nB:\n";
+	B->printMatrix();
+	waitForEnter();
+	cout << "\nC:\n";
+	C->printMatrix();
+	waitForEnter();
+
+	*A += *B;// + C;
+
+	cout << "\nA:\n";
+	A->printMatrix();
+	waitForEnter();
+	cout << "\nB:\n";
+	B->printMatrix();
+	waitForEnter();
+	cout << "\nC:\n";
+	C->printMatrix();
+	waitForEnter();
+}
 
 
 // Wait for enter-key

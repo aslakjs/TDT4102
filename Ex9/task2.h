@@ -1,3 +1,9 @@
+/*----------------------------------------------------
+TITLE:  Assignment 9: task2.h
+COURSE: TDT4102 - Programming
+AUTHOR: Aslak J. Strand (c)
+----------------------------------------------------*/
+
 #ifndef TASK2_H
 #define TASK2_H
 
@@ -22,9 +28,48 @@ public:
     void printMatrix(void);
     void initMatrixValue(void);
     Matrix &operator=(Matrix old) {
-            std::swap(matrix, old.matrix);
+        std::swap(matrix, old.matrix);
+        return *this;
+    }
+
+
+
+    Matrix &operator+=(Matrix cpy) {
+        if ((this->getRows() != cpy.getRows()) || 
+         (this->getColumns() != cpy.getColumns())) {
+            this->matrix = nullptr;
+            cpy.matrix = nullptr;
             return *this;
         }
+        else {
+            for (int i = 0; i < this->getRows(); i++) {
+                for (int j = 0; j < this->getColumns(); j++) {
+                    this->matrix[i][j] += cpy.matrix[i][j];
+                }
+            }
+            return *this;
+        }
+    }
+
+
+
+
+
+
+    Matrix &operator+(Matrix old) {
+        if ((this->getRows() != old.getRows()) || (this->getColumns() != old.getColumns())) {
+            old.matrix = nullptr;
+            return *this;
+        }
+        else {
+            for (int i = 0; i < old.getRows(); i++) {
+                for (int j = 0; j < old.getColumns(); j++) {
+                    this->matrix[i][j] = old.matrix[i][j] + this->matrix[i][j];
+                }
+            }
+            return *this;
+        }
+    }
 };
 
 

@@ -1,3 +1,9 @@
+/*----------------------------------------------------
+TITLE:  Assignment 9: dummyTest.h
+COURSE: TDT4102 - Programming
+AUTHOR: (c) Someone from NTNU & Aslak J. Strand
+----------------------------------------------------*/
+
 #ifndef DUMMYTEST_H
 #define DUMMYTEST_H
 

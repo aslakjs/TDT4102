@@ -27,6 +27,8 @@ Branch contents:
 
 - Dev (In Progress):
   - Assignment 8 (Will be completed at a later time.)
+  - Assignment 9 (Task 4/5 complete)
+    - Minor problems with operator+= and operator+..
   
 <br><br>
 

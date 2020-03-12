@@ -1,3 +1,9 @@
+/*----------------------------------------------------
+TITLE:  Assignment 9: task1.h
+COURSE: TDT4102 - Programming
+AUTHOR: Aslak J. Strand (c)
+----------------------------------------------------*/
+
 #ifndef TASK1_H
 #define TASK1_H
 

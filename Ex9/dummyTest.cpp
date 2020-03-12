@@ -1,3 +1,9 @@
+/*----------------------------------------------------
+TITLE:  Assignment 9: dummyTest.cpp
+COURSE: TDT4102 - Programming
+AUTHOR: (c) Someone from NTNU & Aslak J. Strand
+----------------------------------------------------*/
+
 #include <iostream>
 #include <utility>
 #include "dummyTest.h"
