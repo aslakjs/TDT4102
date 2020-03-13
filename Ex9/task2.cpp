@@ -45,8 +45,10 @@ void Matrix::initMatrixValue(void) {
     }
 }
 Matrix::~Matrix() {
-    for(int i = 0; i < rows; ++i) {
-        delete [] matrix[i];
+    if (matrix != nullptr) {
+        for(int i = 0; i < rows; ++i) {
+            delete [] matrix[i];
+        }
     }
     delete [] matrix;
 }
@@ -67,22 +69,45 @@ bool Matrix::isValid() const {
     if (matrix == nullptr) {return false;}
     else {return true;}
 }
-void Matrix::printMatrix(Matrix print) {
+void Matrix::printMatrix() {
     if (!isValid()) {cout << "\n\nUnvalid matrix.\n\n"; return;}
     cout << "\t|";
-    for (int i = 0; i < print.columns; i++) {
+    for (int i = 0; i < columns; i++) {
         cout << "\t" << i;
     }
     cout << endl;
     cout << "_________";
-    for (int i = 0; i < print.columns; i++) {
+    for (int i = 0; i < columns; i++) {
         cout << "________";
     }
     cout << endl << "\t|";
-    for (int i = 0; i < print.rows; i++) {
+    for (int i = 0; i < rows; i++) {
         cout << endl << i << "\t|";
-        for (int j = 0; j < print.columns; j++) {
+        for (int j = 0; j < columns; j++) {
             cout << "\t" << get(i,j);
         }
     }
 }
+
+ostream& operator<<(ostream &os, const Matrix &prnt) {
+    if (!prnt.isValid()) {cout << "\n\nUnvalid matrix.\n\n"; return os;}
+    os << "\t|";
+    for (int i = 0; i < prnt.getColumns(); i++) {
+        os << "\t" << i;
+    }
+    os << endl;
+    os << "_________";
+    for (int i = 0; i < prnt.getColumns(); i++) {
+        os << "________";
+    }
+    os << endl << "\t|";
+    for (int i = 0; i < prnt.getRows(); i++) {
+        os << endl << i << "\t|";
+        for (int j = 0; j < prnt.getColumns(); j++) {
+            os << "\t" << prnt.get(i,j);
+        }
+    }
+    return os;
+}
+
+

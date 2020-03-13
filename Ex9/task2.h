@@ -14,30 +14,28 @@ private:
     int rows;
     int columns;
     double **matrix;
-    void printMatrix(Matrix print);
 public:
     Matrix();
     explicit Matrix(int row);
     Matrix(int row, int col);
     Matrix(const Matrix &theMatrix);
     ~Matrix();
+    void printMatrix();
     double get(int row, int col) const;
     void set(int row, int col, double value);
     int getRows(void) const;
     int getColumns(void) const;
     bool isValid() const;
     void initMatrixValue(void);
-    Matrix &operator<<(Matrix print) {
-        printMatrix(print);
-    }
-    Matrix &operator=(Matrix old) {
-        std::swap(matrix, old.matrix);
+
+    friend std::ostream& operator<<(std::ostream& os, const Matrix prnt); 
+
+
+    Matrix &operator=(Matrix &old) {
+        std::swap(this->matrix, old.matrix);
         return *this;
     }
-
-
-
-    Matrix &operator+=(Matrix cpy) {
+    Matrix &operator+=(Matrix &cpy) {
         if ((this->getRows() != cpy.getRows()) || 
          (this->getColumns() != cpy.getColumns())) {
             this->matrix = nullptr;
@@ -53,13 +51,7 @@ public:
             return *this;
         }
     }
-
-
-
-
-
-
-    Matrix &operator+(Matrix old) {
+    Matrix &operator+(Matrix &old) {
         if ((this->getRows() != old.getRows()) || (this->getColumns() != old.getColumns())) {
             old.matrix = nullptr;
             return *this;

@@ -8,7 +8,7 @@ AUTHOR: Aslak J. Strand (c)
 #include "task1.h"
 using namespace std;
 
-void fillInFibonacciNumbers(int result[], int length) {
+void fillInFibonacciNumbers(int result[], int length, bool pr) {
     for (int i = 0; i < length; i++) {
         if (i == 0) {
             result[i] = 0;
@@ -20,7 +20,7 @@ void fillInFibonacciNumbers(int result[], int length) {
             result[i] = result[i-1] + result[i-2];
         }
     }
-    //printArray(result, length);
+    if (pr) {printArray(result, length);}
 }
 
 void printArray(int arr[], int length) {

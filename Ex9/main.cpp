@@ -4,9 +4,10 @@ COURSE: TDT4102 - Programming
 AUTHOR: Aslak J. Strand (c)
 
 Notes:
-    - Task2g: Not overloaded operator<<
-	- Task5a and 5b: Not fully implemented 
-		overload operator+= and operator+
+    - Task2g: Not fully implemented
+		overlaod operator<< yields pointer to Matrix 
+		element instead of actual value?!
+	- Task5a and 5b: Not fully implemented overload operator+= and operator+
 
 Startup:
 	- Compile and run program.
@@ -72,7 +73,7 @@ void _task1(void) {
 			case 'a': {
 				int result[10];
 				cout << endl << endl;
-				fillInFibonacciNumbers(result, 10);
+				fillInFibonacciNumbers(result, 10, true);
 				break;
 				}
 			case 'b': {int arr[] = {1, 2, 3, 4, 5}; printArray(arr, 5); break;}
@@ -91,18 +92,31 @@ void _task2(void) {
 	Matrix *mx2 = new Matrix(5);
 	Matrix *mx3 = new Matrix(5,10);
 
-	cout << mx1 << endl;
+	//cout << mx1;
+	mx1->printMatrix();
+	cout << endl;
 	waitForEnter();
-	cout << mx2 << endl;
+
+	//cout << mx2;
+	mx2->printMatrix();
+	cout << endl;
 	waitForEnter();
-	cout << mx3 << endl;
+
+	//cout << mx3;
+	mx3->printMatrix();
+	cout << endl;
 	waitForEnter();
+
+	mx3->set(1,1,3.14);
+
+	//cout << mx3;
+	mx3->printMatrix();
+	cout << endl;
+	waitForEnter();
+
 	cout << "Columns: " << mx3->getColumns() << endl;
 	cout << "Rows:    " << mx3->getRows() << endl;
-	mx3->set(1,1,3.14);
 	cout << "Pos [1][1] = " << mx3->get(1,1) << endl;
-	waitForEnter();
-	cout << mx3 << endl;
 	waitForEnter();
 
 	delete mx1;
@@ -147,10 +161,12 @@ void _task4(void) {
 	theMatrix->set(2,2,1337);
 
 	cout << "The Matrix:" << endl;
-	cout << theMatrix << endl;
+	//cout << theMatrix << endl;
+	theMatrix->printMatrix();
 	waitForEnter();
 	cout << "New Matrix:" << endl;
-	cout << newMatrix << endl;
+	//cout << newMatrix << endl;
+	newMatrix->printMatrix();
 	waitForEnter();
 
 	theMatrix->set(1,1,9);
@@ -178,25 +194,35 @@ void _task5(void) {
 	C->set(1,0,1.5);	C->set(1,1,2);
 
 	cout << "\nA:\n";
-	cout << A << endl;
-	waitForEnter();
-	cout << "\nB:\n";
-	cout << B << endl;
-	waitForEnter();
-	cout << "\nC:\n";
-	cout << C << endl;
+	//cout << A << endl;
+	A->printMatrix();
 	waitForEnter();
 
-	*A += *B;// + C;
+	cout << "\nB:\n";
+	//cout << B << endl;
+	B->printMatrix();
+	waitForEnter();
+
+	cout << "\nC:\n";
+	//cout << C << endl;
+	C->printMatrix();
+	waitForEnter();
+
+	*A += *B + *C;
 
 	cout << "\nA:\n";
-	cout << A << endl;
+	//cout << A << endl;
+	A->printMatrix();
 	waitForEnter();
+
 	cout << "\nB:\n";
-	cout << B << endl;
+	//cout << B << endl;
+	B->printMatrix();
 	waitForEnter();
+
 	cout << "\nC:\n";
-	cout << C << endl;
+	//cout << C << endl;
+	C->printMatrix();
 	waitForEnter();
 }
 
@@ -207,7 +233,7 @@ inline void waitForEnter(void) {
     fseek(stdin,0,SEEK_END); // Clear input buffer
     do {cout << "Press Enter To Continue..";
     } while (cin.get()!='\n');
-    for (int i = 0; i < 100; i++) {cout << endl;}
+    for (int i = 0; i < 2; i++) {cout << endl;}
 }
 void _cc(void) {
 	cout << "---------------------------------" << endl;

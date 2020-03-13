@@ -6,9 +6,12 @@ AUTHOR:  <i>Aslak J. Strand ©</i></pre><br>
 
 <b>Notes:</b>
 - Task 2g: 
-    - Not overloaded operator<<
+    - Not fully implemented overload operator<<.
+	- It somehow only prints a pointer to the Class element, not the element.matrix value.
+	- The print statements are therefore swapped with a call to a spesific print function instead.
 - Task 5a and 5b: 
-    - Not fully implemented overload <br> operator+= and operator+
+    - Not fully implemented overload operator+= and operator+
+	- Will yield correct A matrix, however matrix B changes.
 <br><br>
 
 <b>Startup:</b>
