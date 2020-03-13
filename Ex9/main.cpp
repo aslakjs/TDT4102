@@ -91,18 +91,18 @@ void _task2(void) {
 	Matrix *mx2 = new Matrix(5);
 	Matrix *mx3 = new Matrix(5,10);
 
-	mx1->printMatrix();
+	cout << mx1 << endl;
 	waitForEnter();
-	mx2->printMatrix();
+	cout << mx2 << endl;
 	waitForEnter();
-	mx3->printMatrix();
+	cout << mx3 << endl;
 	waitForEnter();
 	cout << "Columns: " << mx3->getColumns() << endl;
 	cout << "Rows:    " << mx3->getRows() << endl;
 	mx3->set(1,1,3.14);
 	cout << "Pos [1][1] = " << mx3->get(1,1) << endl;
 	waitForEnter();
-	mx3->printMatrix();
+	cout << mx3 << endl;
 	waitForEnter();
 
 	delete mx1;
@@ -147,10 +147,10 @@ void _task4(void) {
 	theMatrix->set(2,2,1337);
 
 	cout << "The Matrix:" << endl;
-	theMatrix->printMatrix();
+	cout << theMatrix << endl;
 	waitForEnter();
 	cout << "New Matrix:" << endl;
-	newMatrix->printMatrix();
+	cout << newMatrix << endl;
 	waitForEnter();
 
 	theMatrix->set(1,1,9);
@@ -178,25 +178,25 @@ void _task5(void) {
 	C->set(1,0,1.5);	C->set(1,1,2);
 
 	cout << "\nA:\n";
-	A->printMatrix();
+	cout << A << endl;
 	waitForEnter();
 	cout << "\nB:\n";
-	B->printMatrix();
+	cout << B << endl;
 	waitForEnter();
 	cout << "\nC:\n";
-	C->printMatrix();
+	cout << C << endl;
 	waitForEnter();
 
 	*A += *B;// + C;
 
 	cout << "\nA:\n";
-	A->printMatrix();
+	cout << A << endl;
 	waitForEnter();
 	cout << "\nB:\n";
-	B->printMatrix();
+	cout << B << endl;
 	waitForEnter();
 	cout << "\nC:\n";
-	C->printMatrix();
+	cout << C << endl;
 	waitForEnter();
 }
 

@@ -63,25 +63,25 @@ int Matrix::getRows(void) const {
 int Matrix::getColumns(void) const {
     return columns;
 }
-bool Matrix::isValid(void) const {
+bool Matrix::isValid() const {
     if (matrix == nullptr) {return false;}
     else {return true;}
 }
-void Matrix::printMatrix(void) {
+void Matrix::printMatrix(Matrix print) {
     if (!isValid()) {cout << "\n\nUnvalid matrix.\n\n"; return;}
     cout << "\t|";
-    for (int i = 0; i < columns; i++) {
+    for (int i = 0; i < print.columns; i++) {
         cout << "\t" << i;
     }
     cout << endl;
     cout << "_________";
-    for (int i = 0; i < columns; i++) {
+    for (int i = 0; i < print.columns; i++) {
         cout << "________";
     }
     cout << endl << "\t|";
-    for (int i = 0; i < rows; i++) {
+    for (int i = 0; i < print.rows; i++) {
         cout << endl << i << "\t|";
-        for (int j = 0; j < columns; j++) {
+        for (int j = 0; j < print.columns; j++) {
             cout << "\t" << get(i,j);
         }
     }
