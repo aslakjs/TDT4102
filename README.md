@@ -24,11 +24,10 @@ Branch contents:
   - Assignment 5 (Class + Game: BlackJack)
   - Assignment 6 (ifstream + graphs)
   - Assignment 7 (Classes and graphics)
+  - Assignment 9 (Classes, pointers, matricies) (Not 100%, but whatever..)
 
 - Dev (In Progress):
   - Assignment 8 (Will be completed at a later time.)
-  - Assignment 9 (Task 4/5 complete)
-    - Minor problems with operator+= and operator+..
   
 <br><br>
 
